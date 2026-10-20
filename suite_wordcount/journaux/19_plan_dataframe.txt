@@ -1,0 +1,114 @@
+== Parsed Logical Plan ==
+'Sort ['count DESC NULLS LAST, 'mot ASC NULLS FIRST], true
++- Aggregate [mot#39], [mot#39, count(1) AS count#46L]
+   +- Filter (length(mot#39) > 2)
+      +- Project [mot#39]
+         +- Generate explode(split(lower(value#37), [^a-zàâäçéèêëîïôöùûüÿœæ]+, -1)), false, [mot#39]
+            +- Relation [value#37] text
+
+== Analyzed Logical Plan ==
+mot: string, count: bigint
+Sort [count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST], true
++- Aggregate [mot#39], [mot#39, count(1) AS count#46L]
+   +- Filter (length(mot#39) > 2)
+      +- Project [mot#39]
+         +- Generate explode(split(lower(value#37), [^a-zàâäçéèêëîïôöùûüÿœæ]+, -1)), false, [mot#39]
+            +- Relation [value#37] text
+
+== Optimized Logical Plan ==
+InMemoryRelation [mot#39, count#46L], StorageLevel(disk, memory, deserialized, 1 replicas)
+   +- AdaptiveSparkPlan isFinalPlan=true
+      +- == Final Plan ==
+         ResultQueryStage 3
+         +- *(3) Sort [count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST], true, 0
+            +- ShuffleQueryStage 2
+               +- Exchange rangepartitioning(count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=440]
+                  +- *(2) HashAggregate(keys=[mot#39], functions=[count(1)], output=[mot#39, count#46L])
+                     +- AQEShuffleRead coalesced
+                        +- ShuffleQueryStage 1
+                           +- Exchange hashpartitioning(mot#39, 8), ENSURE_REQUIREMENTS, [plan_id=414]
+                              +- *(1) HashAggregate(keys=[mot#39], functions=[partial_count(1)], output=[mot#39, count#65L])
+                                 +- TableCacheQueryStage 0
+                                    +- InMemoryTableScan [mot#39]
+                                          +- InMemoryRelation [mot#39], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                                +- *(1) Filter (length(mot#39) > 2)
+                                                   +- *(1) Generate explode(split(lower(value#37), [^a-zàâäçéèêëîïôöùûüÿœæ]+, -1)), false, [mot#39]
+                                                      +- FileScan text [value#37] Batched: false, DataFilters: [], Format: Text, Location: InMemoryFileIndex(1 paths)[file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/outputs/TP1_Spar..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<value:string>
+      +- == Initial Plan ==
+         Sort [count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST], true, 0
+         +- Exchange rangepartitioning(count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=367]
+            +- HashAggregate(keys=[mot#39], functions=[count(1)], output=[mot#39, count#46L])
+               +- Exchange hashpartitioning(mot#39, 8), ENSURE_REQUIREMENTS, [plan_id=364]
+                  +- HashAggregate(keys=[mot#39], functions=[partial_count(1)], output=[mot#39, count#65L])
+                     +- InMemoryTableScan [mot#39]
+                           +- InMemoryRelation [mot#39], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                 +- *(1) Filter (length(mot#39) > 2)
+                                    +- *(1) Generate explode(split(lower(value#37), [^a-zàâäçéèêëîïôöùûüÿœæ]+, -1)), false, [mot#39]
+                                       +- FileScan text [value#37] Batched: false, DataFilters: [], Format: Text, Location: InMemoryFileIndex(1 paths)[file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/outputs/TP1_Spar..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<value:string>
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   ResultQueryStage 1
+   +- TableCacheQueryStage 0
+      +- InMemoryTableScan [mot#39, count#46L]
+            +- InMemoryRelation [mot#39, count#46L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                  +- AdaptiveSparkPlan isFinalPlan=true
+                  +- == Final Plan ==
+                     ResultQueryStage 3
+                     +- *(3) Sort [count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST], true, 0
+                        +- ShuffleQueryStage 2
+                           +- Exchange rangepartitioning(count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=440]
+                              +- *(2) HashAggregate(keys=[mot#39], functions=[count(1)], output=[mot#39, count#46L])
+                                 +- AQEShuffleRead coalesced
+                                    +- ShuffleQueryStage 1
+                                       +- Exchange hashpartitioning(mot#39, 8), ENSURE_REQUIREMENTS, [plan_id=414]
+                                          +- *(1) HashAggregate(keys=[mot#39], functions=[partial_count(1)], output=[mot#39, count#65L])
+                                             +- TableCacheQueryStage 0
+                                                +- InMemoryTableScan [mot#39]
+                                                      +- InMemoryRelation [mot#39], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                                            +- *(1) Filter (length(mot#39) > 2)
+                                                               +- *(1) Generate explode(split(lower(value#37), [^a-zàâäçéèêëîïôöùûüÿœæ]+, -1)), false, [mot#39]
+                                                                  +- FileScan text [value#37] Batched: false, DataFilters: [], Format: Text, Location: InMemoryFileIndex(1 paths)[file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/outputs/TP1_Spar..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<value:string>
+                  +- == Initial Plan ==
+                     Sort [count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST], true, 0
+                     +- Exchange rangepartitioning(count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=367]
+                        +- HashAggregate(keys=[mot#39], functions=[count(1)], output=[mot#39, count#46L])
+                           +- Exchange hashpartitioning(mot#39, 8), ENSURE_REQUIREMENTS, [plan_id=364]
+                              +- HashAggregate(keys=[mot#39], functions=[partial_count(1)], output=[mot#39, count#65L])
+                                 +- InMemoryTableScan [mot#39]
+                                       +- InMemoryRelation [mot#39], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                             +- *(1) Filter (length(mot#39) > 2)
+                                                +- *(1) Generate explode(split(lower(value#37), [^a-zàâäçéèêëîïôöùûüÿœæ]+, -1)), false, [mot#39]
+                                                   +- FileScan text [value#37] Batched: false, DataFilters: [], Format: Text, Location: InMemoryFileIndex(1 paths)[file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/outputs/TP1_Spar..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<value:string>
++- == Initial Plan ==
+   InMemoryTableScan [mot#39, count#46L]
+      +- InMemoryRelation [mot#39, count#46L], StorageLevel(disk, memory, deserialized, 1 replicas)
+            +- AdaptiveSparkPlan isFinalPlan=true
+            +- == Final Plan ==
+               ResultQueryStage 3
+               +- *(3) Sort [count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST], true, 0
+                  +- ShuffleQueryStage 2
+                     +- Exchange rangepartitioning(count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=440]
+                        +- *(2) HashAggregate(keys=[mot#39], functions=[count(1)], output=[mot#39, count#46L])
+                           +- AQEShuffleRead coalesced
+                              +- ShuffleQueryStage 1
+                                 +- Exchange hashpartitioning(mot#39, 8), ENSURE_REQUIREMENTS, [plan_id=414]
+                                    +- *(1) HashAggregate(keys=[mot#39], functions=[partial_count(1)], output=[mot#39, count#65L])
+                                       +- TableCacheQueryStage 0
+                                          +- InMemoryTableScan [mot#39]
+                                                +- InMemoryRelation [mot#39], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                                      +- *(1) Filter (length(mot#39) > 2)
+                                                         +- *(1) Generate explode(split(lower(value#37), [^a-zàâäçéèêëîïôöùûüÿœæ]+, -1)), false, [mot#39]
+                                                            +- FileScan text [value#37] Batched: false, DataFilters: [], Format: Text, Location: InMemoryFileIndex(1 paths)[file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/outputs/TP1_Spar..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<value:string>
+            +- == Initial Plan ==
+               Sort [count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST], true, 0
+               +- Exchange rangepartitioning(count#46L DESC NULLS LAST, mot#39 ASC NULLS FIRST, 8), ENSURE_REQUIREMENTS, [plan_id=367]
+                  +- HashAggregate(keys=[mot#39], functions=[count(1)], output=[mot#39, count#46L])
+                     +- Exchange hashpartitioning(mot#39, 8), ENSURE_REQUIREMENTS, [plan_id=364]
+                        +- HashAggregate(keys=[mot#39], functions=[partial_count(1)], output=[mot#39, count#65L])
+                           +- InMemoryTableScan [mot#39]
+                                 +- InMemoryRelation [mot#39], StorageLevel(disk, memory, deserialized, 1 replicas)
+                                       +- *(1) Filter (length(mot#39) > 2)
+                                          +- *(1) Generate explode(split(lower(value#37), [^a-zàâäçéèêëîïôöùûüÿœæ]+, -1)), false, [mot#39]
+                                             +- FileScan text [value#37] Batched: false, DataFilters: [], Format: Text, Location: InMemoryFileIndex(1 paths)[file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/outputs/TP1_Spar..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<value:string>

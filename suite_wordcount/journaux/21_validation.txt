@@ -1,0 +1,10 @@
+{
+  "reference_python": true,
+  "export_rdd": true,
+  "export_csv": true,
+  "sans_vides": true,
+  "somme_par_livre": true,
+  "mini_exact": true,
+  "somme_carres": true,
+  "map_flatmap": true
+}

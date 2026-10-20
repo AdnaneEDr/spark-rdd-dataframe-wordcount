@@ -1,0 +1,82 @@
+<!DOCTYPE html><html data-bs-theme="light"><head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/static/bootstrap.min.css" type="text/css"><link rel="stylesheet" href="/static/webui.css" type="text/css"><script src="/static/sorttable.js"></script><script src="/static/jquery.min.js"></script><script src="/static/bootstrap.bundle.min.js"></script><script src="/static/initialize-tooltips.js"></script><script src="/static/table.js"></script><script src="/static/log-view.js"></script><script src="/static/webui.js"></script><script src="/static/scroll-button.js" type="module"></script><script nonce="82ee83d1-9cad-4928-b327-fa59deb33a67">setUIRoot('')</script>
+        <script nonce="82ee83d1-9cad-4928-b327-fa59deb33a67">document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('spark-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))</script>
+        <script nonce="82ee83d1-9cad-4928-b327-fa59deb33a67">setAppBasePath('')</script>
+        
+        <link rel="stylesheet" href="/static/dataTables.bootstrap5.min.css" type="text/css"><link rel="stylesheet" href="/static/jquery.dataTables.min.css" type="text/css"><link rel="stylesheet" href="/static/webui-dataTables.css" type="text/css"><script src="/static/jquery.dataTables.min.js"></script><script src="/static/dataTables.bootstrap5.min.js"></script>
+        
+        <link rel="shortcut icon" href="/static/spark-logo.svg">
+        <title>Suite TP Spark - WordCount RDD DataFrame SQL - SQL / DataFrame</title>
+      </head>
+      <body class="d-flex flex-column min-vh-100">
+        <div id="loading-overlay" class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+          <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <h3 class="mt-2">Loading...</h3>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
+          <div class="navbar-header">
+            <div class="navbar-brand">
+              <a href="/">
+                <img class="spark-logo" src="/static/spark-logo.svg" alt="Spark Logo" height="36">
+              </a>
+            </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto"><li class="nav-item">
+        <a class="nav-link" href="/jobs/">Jobs</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/stages/">Stages</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/storage/">Storage</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/environment/">Environment</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/executors/">Executors</a>
+      </li><li class="nav-item active">
+        <a class="nav-link" href="/SQL/">SQL / DataFrame</a>
+      </li></ul>
+            <span class="navbar-text navbar-right d-none d-md-block">
+              <strong title="Suite TP Spark - WordCount RDD DataFrame SQL" class="text-nowrap">Suite TP Spark - WordCount RDD D...</strong>
+              <span class="text-nowrap">application UI</span>
+            </span>
+            <button id="theme-toggle" class="btn btn-sm btn-link text-decoration-none fs-5 ms-2 p-0" type="button" title="Switch to dark mode">◑</button>
+          </div>
+        </nav>
+        <div class="container-fluid flex-fill">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="align-bottom text-nowrap overflow-hidden text-truncate">
+                SQL / DataFrame
+                
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <span>
+        <div id="group-sub-exec-config" style="display:none" data-value="true"></div>
+        <div id="sql-executions-table"><select id="status-filter" class="form-select form-select-sm d-inline-block w-auto mb-2"><option value="">All Statuses</option><option value="RUNNING">Running</option><option value="COMPLETED">Completed</option><option value="FAILED">Failed</option></select><div id="sql-table_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="sql-table_length"><label>Show <select name="sql-table_length" aria-controls="sql-table" class="form-select form-select-sm"><option value="20">20</option><option value="50">50</option><option value="100">100</option><option value="-1">All</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="sql-table_filter" class="dataTables_filter"><label>Search:&nbsp;<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="sql-table" style=""></label></div></div></div><div class="row dt-row"><div class="col-sm-12"><table id="sql-table" class="table table-striped compact cell-border dataTable no-footer" style="width: 100%;" aria-describedby="sql-table_info"><thead><tr><th class="sorting sorting_desc" tabindex="0" aria-controls="sql-table" rowspan="1" colspan="1" aria-sort="descending" aria-label="ID: activate to sort column ascending" style="width: 15px;">ID</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Query ID" style="width: 70px;">Query ID</th><th class="sorting" tabindex="0" aria-controls="sql-table" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 64px;">Status</th><th class="sorting" tabindex="0" aria-controls="sql-table" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" style="width: 647px;">Description</th><th class="sorting" tabindex="0" aria-controls="sql-table" rowspan="1" colspan="1" aria-label="Submitted: activate to sort column ascending" style="width: 114px;">Submitted</th><th class="sorting" tabindex="0" aria-controls="sql-table" rowspan="1" colspan="1" aria-label="Duration: activate to sort column ascending" style="width: 59px;">Duration</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Succeeded Jobs" style="width: 125px;">Succeeded Jobs</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Error Message" style="width: 93px;">Error Message</th><th class="sub-exec-toggle sorting_disabled" rowspan="1" colspan="1" aria-label="Sub Executions" style="width: 99px;">Sub Executions</th></tr></thead><tbody><tr class="odd"><td class="sorting_1"><a href="/SQL/execution/?id=11">11</a></td><td><span title="01a15a65-aee9-7ea5-b16a-29ea9de97a29">01a15a65...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=11" title="collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts...</a></td><td>2026-10-20 17:39:35</td><td>1 s</td><td><a href="/jobs/job/?id=39">39</a>, <a href="/jobs/job/?id=40">40</a>, <a href="/jobs/job/?id=41">41</a>, <a href="/jobs/job/?id=42">42</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="even"><td class="sorting_1"><a href="/SQL/execution/?id=10">10</a></td><td><span title="01a15a65-ac0b-72c6-9abd-f2655fdbea01">01a15a65...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=10" title="collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:69">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts...</a></td><td>2026-10-20 17:39:35</td><td>0.5 s</td><td><a href="/jobs/job/?id=37">37</a>, <a href="/jobs/job/?id=38">38</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="odd"><td class="sorting_1"><a href="/SQL/execution/?id=9">9</a></td><td><span title="01a15a65-7cca-7c08-adff-367e78da47ed">01a15a65...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=9">csv at NativeMethodAccessorImpl.java:0</a></td><td>2026-10-20 17:39:22</td><td>2 s</td><td><a href="/jobs/job/?id=35">35</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="even"><td class="sorting_1"><a href="/SQL/execution/?id=8">8</a></td><td><span title="01a15a65-7c0b-7190-89f6-56adc7cfb43a">01a15a65...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=8" title="collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:61">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts...</a></td><td>2026-10-20 17:39:22</td><td>79.0 ms</td><td><a href="/jobs/job/?id=34">34</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="odd"><td class="sorting_1"><a href="/SQL/execution/?id=7">7</a></td><td><span title="01a15a65-7bf7-7413-988a-57b7b70398bb">01a15a65...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=7">createOrReplaceTempView at NativeMethodAccessorImpl.java:0</a></td><td>2026-10-20 17:39:22</td><td>10.0 ms</td><td></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="even"><td class="sorting_1"><a href="/SQL/execution/?id=6">6</a></td><td><span title="01a15a65-6de9-7702-9487-836fc47af079">01a15a65...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=6" title="collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts...</a></td><td>2026-10-20 17:39:19</td><td>3 s</td><td><a href="/jobs/job/?id=28">28</a>, <a href="/jobs/job/?id=29">29</a>, <a href="/jobs/job/?id=30">30</a>, <a href="/jobs/job/?id=31">31</a>, <a href="/jobs/job/?id=32">32</a>, <a href="/jobs/job/?id=33">33</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="odd"><td class="sorting_1"><a href="/SQL/execution/?id=5">5</a></td><td><span title="01a15a64-79ff-7c05-829c-fa09edc2f2e0">01a15a64...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=5">showString at NativeMethodAccessorImpl.java:0</a></td><td>2026-10-20 17:38:16</td><td>0.4 s</td><td><a href="/jobs/job/?id=20">20</a>, <a href="/jobs/job/?id=21">21</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="even"><td class="sorting_1"><a href="/SQL/execution/?id=4">4</a></td><td><span title="01a15a64-77e0-72d3-b6df-91f4135b00cb">01a15a64...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=4" title="collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:45">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts...</a></td><td>2026-10-20 17:38:16</td><td>0.4 s</td><td><a href="/jobs/job/?id=18">18</a>, <a href="/jobs/job/?id=19">19</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="odd"><td class="sorting_1"><a href="/SQL/execution/?id=3">3</a></td><td><span title="01a15a64-76a0-7e01-9ae7-b71b12c212ee">01a15a64...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=3">createOrReplaceTempView at NativeMethodAccessorImpl.java:0</a></td><td>2026-10-20 17:38:15</td><td>0.1 s</td><td></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="even"><td class="sorting_1"><a href="/SQL/execution/?id=2">2</a></td><td><span title="01a15a64-5e63-7bb9-8123-31a4fe5d166a">01a15a64...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=2" title="collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts...</a></td><td>2026-10-20 17:38:14</td><td>1 s</td><td><a href="/jobs/job/?id=14">14</a>, <a href="/jobs/job/?id=15">15</a>, <a href="/jobs/job/?id=16">16</a>, <a href="/jobs/job/?id=17">17</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="odd"><td class="sorting_1"><a href="/SQL/execution/?id=1">1</a></td><td><span title="01a15a64-5eb5-7c8f-9500-e806cee74e87">01a15a64...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=1">showString at NativeMethodAccessorImpl.java:0</a></td><td>2026-10-20 17:38:09</td><td>5 s</td><td><a href="/jobs/job/?id=12">12</a>, <a href="/jobs/job/?id=13">13</a></td><td></td><td class="  sub-exec-toggle"></td></tr><tr class="even"><td class="sorting_1"><a href="/SQL/execution/?id=0">0</a></td><td><span title="01a15a63-c68f-7af7-b80b-82fdfdebce0c">01a15a63...</span></td><td><span class="badge bg-success">COMPLETED</span></td><td><a href="/SQL/execution/?id=0" title="first at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:27">first at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\a...</a></td><td>2026-10-20 17:37:30</td><td>4 s</td><td><a href="/jobs/job/?id=0">0</a>, <a href="/jobs/job/?id=1">1</a></td><td></td><td class="  sub-exec-toggle"></td></tr></tbody></table><div id="sql-table_processing" class="dataTables_processing card" role="status" style="display: none;"><div><div></div><div></div><div></div><div></div></div></div></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="sql-table_info" role="status" aria-live="polite">Showing 1 to 12 of 12 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="sql-table_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="sql-table_previous"><a aria-controls="sql-table" aria-disabled="true" role="link" data-dt-idx="previous" tabindex="-1" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="sql-table" role="link" aria-current="page" data-dt-idx="0" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="sql-table_next"><a aria-controls="sql-table" aria-disabled="true" role="link" data-dt-idx="next" tabindex="-1" class="page-link">Next</a></li></ul></div></div></div></div></div>
+        <script src="/static/sql/sql-table-utils.js"></script>
+        <script src="/static/sql/allexecutionspage.js"></script>
+      </span>
+            </div>
+          </div>
+        </div>
+        <footer class="footer mt-auto py-2 bg-body-tertiary border-top">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center small text-body-secondary">
+          <span>4.2.0</span>
+          <span>Started: 2026/10/20 17:37:19</span><span id="footer-uptime" data-start-time="1792517839755">Uptime: 0h 2m</span>
+          <span>lenovo</span>
+        </div>
+      </div>
+    </footer>
+      
+    <div class="scroll-btn-container"><div class="scroll-btn-half scroll-btn-top"></div><div class="scroll-btn-half scroll-btn-bottom"></div></div></body></html>

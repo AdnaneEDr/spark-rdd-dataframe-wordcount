@@ -1,0 +1,69 @@
+{
+  "lignes": 3,
+  "premiere_ligne": "La mer est calme. La mer est belle.",
+  "partitions": 2,
+  "map_split": 3,
+  "flatMap_split": 20,
+  "mots_normalises": 19,
+  "mots_plus_2": 13,
+  "uniques": 9,
+  "compte": [
+    [
+      "mer",
+      4
+    ],
+    [
+      "est",
+      2
+    ],
+    [
+      "belle",
+      1
+    ],
+    [
+      "calme",
+      1
+    ],
+    [
+      "capitaine",
+      1
+    ],
+    [
+      "nautilus",
+      1
+    ],
+    [
+      "plonge",
+      1
+    ],
+    [
+      "regarde",
+      1
+    ],
+    [
+      "sous",
+      1
+    ]
+  ],
+  "top3": [
+    [
+      "mer",
+      4
+    ],
+    [
+      "est",
+      2
+    ],
+    [
+      "belle",
+      1
+    ]
+  ],
+  "plus_5": [
+    "capitaine",
+    "nautilus",
+    "plonge",
+    "regarde"
+  ],
+  "debug_rdd": "(2) PythonRDD[15] at collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:35 []\n |  MapPartitionsRDD[14] at mapPartitions at PythonRDD.scala:197 []\n |  ShuffledRDD[13] at partitionBy at NativeMethodAccessorImpl.java:0 []\n +-(2) PairwiseRDD[12] at reduceByKey at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:34 []\n    |  PythonRDD[11] at reduceByKey at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:34 []\n    |  C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\mini.txt MapPartitionsRDD[10] at textFile at NativeMethodAccessorImpl.java:0 []\n    |      CachedPartitions: 2; MemorySize: 180.0 B; DiskSize: 0.0 B\n    |  C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\mini.txt HadoopRDD[9] at textFile at NativeMethodAccessorImpl.java:0 []"
+}

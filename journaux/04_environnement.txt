@@ -1,0 +1,7 @@
+Variables appliquees aux processus de ce TP (non persistantes) :
+
+JAVA_HOME = C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\work\java\jdk-17.0.20.1+1
+SPARK_HOME = C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\work\spark
+PYSPARK_PYTHON = C:\Users\lenovo\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe
+
+PATH : JAVA_HOME\bin et SPARK_HOME\bin sont ajoutes en tete.

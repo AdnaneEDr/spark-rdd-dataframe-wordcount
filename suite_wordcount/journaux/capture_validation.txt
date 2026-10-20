@@ -1,0 +1,20 @@
+VALIDATION DES CALCULS ET DES EXPORTS
+
+reference_python : OK
+export_rdd : OK
+export_csv : OK
+sans_vides : OK
+somme_par_livre : OK
+mini_exact : OK
+somme_carres : OK
+map_flatmap : OK
+
+Référence : Counter Python indépendant.
+Relecture complète des part-* RDD et part-*.csv DataFrame.
+
+ÉVALUATION PARESSEUSE
+Création : OK, aucune action exécutée
+Action count() : Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/outputs/TP1_Spark/suite_wordcount/fichier_qui_n_existe_pas.txt
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:306)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatu

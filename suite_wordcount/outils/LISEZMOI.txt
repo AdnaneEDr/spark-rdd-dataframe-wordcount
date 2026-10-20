@@ -1,0 +1,1 @@
+Binaires Windows issus du dépôt cdarlint/winutils, hadoop-3.3.6/bin, comme préconisé par le sujet. Il ne s’agit pas de binaires publiés directement par Apache. Source et empreintes : provenance_hadoop.json. JAVA_HOME et SPARK_HOME réutilisent l’installation existante. HADOOP_HOME doit désigner le dossier outils/hadoop (sans bin).

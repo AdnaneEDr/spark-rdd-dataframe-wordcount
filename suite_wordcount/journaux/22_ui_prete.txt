@@ -1,0 +1,4 @@
+Application : local-1792517842184
+URL : http://127.0.0.1:4040
+Tous les calculs et exports sont terminés.
+Créer ARRETER_UI dans suite_wordcount pour terminer la session.

@@ -1,0 +1,121 @@
+$ spark-class.cmd org.apache.spark.examples.SparkPi 10 (SPARK_DIST_CLASSPATH=examples/jars/* ; JAVA_TOOL_OPTIONS=-Dspark.master=local[2] -Dspark.ui.port=4041)
+
+Picked up JAVA_TOOL_OPTIONS: -Dspark.master=local[2] -Dspark.ui.port=4041
+Picked up JAVA_TOOL_OPTIONS: -Dspark.master=local[2] -Dspark.ui.port=4041
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/10/20 17:27:03 INFO SparkContext: Running Spark version 4.2.0
+26/10/20 17:27:03 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/10/20 17:27:03 INFO SparkContext: Java version 17.0.20.1+1
+26/10/20 17:27:03 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+26/10/20 17:27:04 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/20 17:27:04 INFO ResourceUtils: ==============================================================
+26/10/20 17:27:04 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/20 17:27:04 INFO ResourceUtils: ==============================================================
+26/10/20 17:27:04 INFO SparkContext: Submitted application: Spark Pi
+26/10/20 17:27:04 INFO SecurityManager: Changing view acls to: lenovo
+26/10/20 17:27:04 INFO SecurityManager: Changing modify acls to: lenovo
+26/10/20 17:27:04 INFO SecurityManager: Changing view acls groups to: lenovo
+26/10/20 17:27:04 INFO SecurityManager: Changing modify acls groups to: lenovo
+26/10/20 17:27:04 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: lenovo groups with view permissions: EMPTY; users with modify permissions: lenovo; groups with modify permissions: EMPTY; RPC SSL disabled
+26/10/20 17:27:04 INFO Utils: Successfully started service 'sparkDriver' on port 53945.
+26/10/20 17:27:04 INFO SparkEnv: Registering MapOutputTracker
+26/10/20 17:27:04 INFO SparkEnv: Registering BlockManagerMaster
+26/10/20 17:27:04 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/20 17:27:04 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/20 17:27:04 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/20 17:27:05 INFO DiskBlockManager: Created local directory at C:\Users\lenovo\AppData\Local\Temp\blockmgr-efb0690e-14c8-4b95-854b-23361b9233b6
+26/10/20 17:27:05 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/20 17:27:05 INFO JettyUtils: Start Jetty 127.0.0.1:4041 for SparkUI
+26/10/20 17:27:05 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+26/10/20 17:27:05 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/20 17:27:05 INFO ResourceProfile: Limiting resource is cpu
+26/10/20 17:27:05 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/20 17:27:05 INFO SecurityManager: Changing view acls to: lenovo
+26/10/20 17:27:05 INFO SecurityManager: Changing modify acls to: lenovo
+26/10/20 17:27:05 INFO SecurityManager: Changing view acls groups to: lenovo
+26/10/20 17:27:05 INFO SecurityManager: Changing modify acls groups to: lenovo
+26/10/20 17:27:05 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: lenovo groups with view permissions: EMPTY; users with modify permissions: lenovo; groups with modify permissions: EMPTY; RPC SSL disabled
+26/10/20 17:27:06 INFO Executor: Starting executor ID driver on host kubernetes.docker.internal
+26/10/20 17:27:06 INFO Executor: Running Spark version 4.2.0
+26/10/20 17:27:06 INFO Executor: OS info Windows 11, 10.0, amd64
+26/10/20 17:27:06 INFO Executor: Java version 17.0.20.1+1
+26/10/20 17:27:06 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/20 17:27:06 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@ca546a1 for default.
+26/10/20 17:27:06 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 53946.
+26/10/20 17:27:06 INFO NettyBlockTransferService: Server created on kubernetes.docker.internal:53946
+26/10/20 17:27:06 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/20 17:27:06 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, kubernetes.docker.internal, 53946, None)
+26/10/20 17:27:06 INFO BlockManagerMasterEndpoint: Registering block manager kubernetes.docker.internal:53946 with 434.4 MiB RAM, BlockManagerId(driver, kubernetes.docker.internal, 53946, None)
+26/10/20 17:27:06 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, kubernetes.docker.internal, 53946, None)
+26/10/20 17:27:06 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, kubernetes.docker.internal, 53946, None)
+26/10/20 17:27:09 INFO SparkContext: Starting job: reduce at SparkPi.scala:38
+26/10/20 17:27:09 INFO DAGScheduler: Got job 0 (reduce at SparkPi.scala:38) with 10 output partitions
+26/10/20 17:27:09 INFO DAGScheduler: Final stage: ResultStage 0 (reduce at SparkPi.scala:38)
+26/10/20 17:27:09 INFO DAGScheduler: Parents of final stage: List()
+26/10/20 17:27:09 INFO DAGScheduler: Missing parents: List()
+26/10/20 17:27:09 INFO DAGScheduler: Missing parents found for ResultStage 0: List()
+26/10/20 17:27:09 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at map at SparkPi.scala:34), which has no missing parents
+26/10/20 17:27:09 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/10/20 17:27:09 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 4.0 KiB, free 434.4 MiB)
+26/10/20 17:27:09 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 2.2 KiB, free 434.4 MiB)
+26/10/20 17:27:09 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1760
+26/10/20 17:27:09 INFO DAGScheduler: Submitting 10 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at map at SparkPi.scala:34) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
+26/10/20 17:27:09 INFO TaskSchedulerImpl: Adding task set 0.0 with 10 tasks resource profile 0
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (kubernetes.docker.internal,executor driver, partition 0, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (kubernetes.docker.internal,executor driver, partition 1, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+26/10/20 17:27:09 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+26/10/20 17:27:09 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1160 bytes result sent to driver
+26/10/20 17:27:09 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1160 bytes result sent to driver
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (kubernetes.docker.internal,executor driver, partition 2, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (kubernetes.docker.internal,executor driver, partition 3, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+26/10/20 17:27:09 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 234 ms on kubernetes.docker.internal (executor driver) (1/10)
+26/10/20 17:27:09 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 265 ms on kubernetes.docker.internal (executor driver) (2/10)
+26/10/20 17:27:09 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1117 bytes result sent to driver
+26/10/20 17:27:09 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 1074 bytes result sent to driver
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (kubernetes.docker.internal,executor driver, partition 4, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (kubernetes.docker.internal,executor driver, partition 5, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+26/10/20 17:27:09 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 75 ms on kubernetes.docker.internal (executor driver) (3/10)
+26/10/20 17:27:09 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 68 ms on kubernetes.docker.internal (executor driver) (4/10)
+26/10/20 17:27:09 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 1117 bytes result sent to driver
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (kubernetes.docker.internal,executor driver, partition 6, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+26/10/20 17:27:09 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 67 ms on kubernetes.docker.internal (executor driver) (5/10)
+26/10/20 17:27:09 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 1074 bytes result sent to driver
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (kubernetes.docker.internal,executor driver, partition 7, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+26/10/20 17:27:09 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 69 ms on kubernetes.docker.internal (executor driver) (6/10)
+26/10/20 17:27:09 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 1031 bytes result sent to driver
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (kubernetes.docker.internal,executor driver, partition 8, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+26/10/20 17:27:09 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 46 ms on kubernetes.docker.internal (executor driver) (7/10)
+26/10/20 17:27:09 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 1117 bytes result sent to driver
+26/10/20 17:27:09 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (kubernetes.docker.internal,executor driver, partition 9, PROCESS_LOCAL, 9766 bytes) 
+26/10/20 17:27:09 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 54 ms on kubernetes.docker.internal (executor driver) (8/10)
+26/10/20 17:27:09 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+26/10/20 17:27:10 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 1117 bytes result sent to driver
+26/10/20 17:27:10 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 1074 bytes result sent to driver
+26/10/20 17:27:10 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 76 ms on kubernetes.docker.internal (executor driver) (9/10)
+26/10/20 17:27:10 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 63 ms on kubernetes.docker.internal (executor driver) (10/10)
+Pi is roughly 3.1402751402751403
+26/10/20 17:27:10 INFO DAGScheduler: ResultStage 0 (reduce at SparkPi.scala:38) finished in 778 ms
+26/10/20 17:27:10 INFO TaskSchedulerImpl: Removed TaskSet 0.0 whose tasks have all completed, from pool 
+26/10/20 17:27:10 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+26/10/20 17:27:10 INFO TaskSchedulerImpl: Canceling stage 0
+26/10/20 17:27:10 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+26/10/20 17:27:10 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 835.5732 ms
+26/10/20 17:27:10 INFO SparkContext: SparkContext is stopping with exitCode 0 from stop at SparkPi.scala:40.
+26/10/20 17:27:10 INFO SparkUI: Stopped Spark web UI at http://kubernetes.docker.internal:4041
+26/10/20 17:27:10 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/10/20 17:27:10 INFO MemoryStore: MemoryStore cleared
+26/10/20 17:27:10 INFO BlockManager: BlockManager stopped
+26/10/20 17:27:10 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/10/20 17:27:10 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/10/20 17:27:10 INFO SparkContext: Successfully stopped SparkContext (Uptime: 6562 ms)
+
+Code de sortie : 0

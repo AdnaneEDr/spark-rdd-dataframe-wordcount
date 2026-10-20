@@ -1,0 +1,313 @@
+{
+  "environnement": {
+    "spark": "4.2.0",
+    "master": "local[2]",
+    "parallelisme": 2,
+    "python": "3.12.14",
+    "ui": "http://127.0.0.1:4040",
+    "shuffle_partitions": "8"
+  },
+  "somme_carres": 338350,
+  "carres_rdd": [
+    1,
+    4,
+    9,
+    16
+  ],
+  "mini": {
+    "lignes": 3,
+    "premiere_ligne": "La mer est calme. La mer est belle.",
+    "partitions": 2,
+    "map_split": 3,
+    "flatMap_split": 20,
+    "mots_normalises": 19,
+    "mots_plus_2": 13,
+    "uniques": 9,
+    "compte": [
+      [
+        "mer",
+        4
+      ],
+      [
+        "est",
+        2
+      ],
+      [
+        "belle",
+        1
+      ],
+      [
+        "calme",
+        1
+      ],
+      [
+        "capitaine",
+        1
+      ],
+      [
+        "nautilus",
+        1
+      ],
+      [
+        "plonge",
+        1
+      ],
+      [
+        "regarde",
+        1
+      ],
+      [
+        "sous",
+        1
+      ]
+    ],
+    "top3": [
+      [
+        "mer",
+        4
+      ],
+      [
+        "est",
+        2
+      ],
+      [
+        "belle",
+        1
+      ]
+    ],
+    "plus_5": [
+      "capitaine",
+      "nautilus",
+      "plonge",
+      "regarde"
+    ],
+    "debug_rdd": "(2) PythonRDD[15] at collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:35 []\n |  MapPartitionsRDD[14] at mapPartitions at PythonRDD.scala:197 []\n |  ShuffledRDD[13] at partitionBy at NativeMethodAccessorImpl.java:0 []\n +-(2) PairwiseRDD[12] at reduceByKey at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:34 []\n    |  PythonRDD[11] at reduceByKey at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:34 []\n    |  C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\mini.txt MapPartitionsRDD[10] at textFile at NativeMethodAccessorImpl.java:0 []\n    |      CachedPartitions: 2; MemorySize: 180.0 B; DiskSize: 0.0 B\n    |  C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\mini.txt HadoopRDD[9] at textFile at NativeMethodAccessorImpl.java:0 []",
+    "sql_top3": [
+      [
+        "mer",
+        4
+      ],
+      [
+        "est",
+        2
+      ],
+      [
+        "belle",
+        1
+      ]
+    ],
+    "egalite_rdd_df": true
+  },
+  "corpus": {
+    "partitions_rdd": 5,
+    "lignes": 93311,
+    "mots": 496765,
+    "uniques": 31052,
+    "top15": [
+      [
+        "que",
+        9386
+      ],
+      [
+        "les",
+        9112
+      ],
+      [
+        "vous",
+        7370
+      ],
+      [
+        "une",
+        6923
+      ],
+      [
+        "qui",
+        6503
+      ],
+      [
+        "des",
+        5599
+      ],
+      [
+        "est",
+        5496
+      ],
+      [
+        "pas",
+        5347
+      ],
+      [
+        "dans",
+        5172
+      ],
+      [
+        "était",
+        4465
+      ],
+      [
+        "son",
+        3918
+      ],
+      [
+        "dit",
+        3784
+      ],
+      [
+        "nous",
+        3667
+      ],
+      [
+        "mais",
+        3633
+      ],
+      [
+        "pour",
+        3614
+      ]
+    ],
+    "fichiers": [
+      "pg13951.txt",
+      "pg17489.txt",
+      "pg17989.txt",
+      "pg4791.txt",
+      "pg5097.txt"
+    ],
+    "egalite_rdd_df": true
+  },
+  "sans_vides": {
+    "liste": [
+      "dans",
+      "des",
+      "est",
+      "les",
+      "pas",
+      "pour",
+      "que",
+      "qui",
+      "une"
+    ],
+    "mots": 439613,
+    "uniques": 31043,
+    "top15": [
+      [
+        "vous",
+        7370
+      ],
+      [
+        "était",
+        4465
+      ],
+      [
+        "son",
+        3918
+      ],
+      [
+        "dit",
+        3784
+      ],
+      [
+        "nous",
+        3667
+      ],
+      [
+        "mais",
+        3633
+      ],
+      [
+        "sur",
+        3605
+      ],
+      [
+        "lui",
+        3496
+      ],
+      [
+        "avait",
+        3474
+      ],
+      [
+        "plus",
+        3146
+      ],
+      [
+        "cette",
+        3128
+      ],
+      [
+        "elle",
+        3023
+      ],
+      [
+        "par",
+        2829
+      ],
+      [
+        "avec",
+        2665
+      ],
+      [
+        "comme",
+        2600
+      ]
+    ],
+    "egalite_rdd_df": true
+  },
+  "par_livre": {
+    "methode": "_metadata.file_name",
+    "filtre": "mots de plus de 2 lettres, comme WordCount",
+    "resultats": [
+      [
+        "pg13951.txt",
+        165311
+      ],
+      [
+        "pg17489.txt",
+        82580
+      ],
+      [
+        "pg17989.txt",
+        91506
+      ],
+      [
+        "pg4791.txt",
+        51402
+      ],
+      [
+        "pg5097.txt",
+        105966
+      ]
+    ]
+  },
+  "paresseux": {
+    "creation": "OK, aucune action exécutée",
+    "count": "Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.\n: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/outputs/TP1_Spark/suite_wordcount/fichier_qui_n_existe_pas.txt\r\n\tat org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:306)\r\n\tat org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:245)\r\n\tat org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:334)\r\n\tat org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:231)\r\n\tat org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:301)\r\n\tat scala.Option.getOrElse(Option.scala:201)\r\n\tat org.apache.spark.rdd.RDD.partitions(RDD.scala:297)\r\n\tat org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:54)\r\n\tat org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:301)\r\n\tat scala.Option.getOrElse(Option.scala:201)\r\n\tat org.apache.spark.rdd.RDD.partitions(RDD.scala:297)\r\n\tat org.apache.spark.api.python.PythonRDD.getPartitions(Pytho"
+  },
+  "validation": {
+    "reference_python": true,
+    "export_rdd": true,
+    "export_csv": true,
+    "sans_vides": true,
+    "somme_par_livre": true,
+    "mini_exact": true,
+    "somme_carres": true,
+    "map_flatmap": true
+  },
+  "local_etoile": {
+    "master": "local[*]",
+    "parallelisme": 16,
+    "processeurs_logiques": 16
+  },
+  "ui": {
+    "application_id": "local-1792517842184",
+    "jobs_reussis": 43,
+    "jobs_echec": 0,
+    "stages_complets": 47,
+    "stages_echec": 0,
+    "max_taches_stage": 8
+  },
+  "ui_arret": {
+    "port": 4040,
+    "actif_apres_arret": false,
+    "observation": "connexion refusée après spark.stop()"
+  }
+}

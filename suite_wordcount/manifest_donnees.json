@@ -1,0 +1,32 @@
+[
+  {
+    "fichier": "pg17489.txt",
+    "source": "https://www.gutenberg.org/cache/epub/17489/pg17489.txt",
+    "octets": 710496,
+    "sha256": "a5de514ba7b9f2e1790e7e259c4e8b7a35ae1d29e4bf9a5f8767039c58b80503"
+  },
+  {
+    "fichier": "pg17989.txt",
+    "source": "https://www.gutenberg.org/cache/epub/17989/pg17989.txt",
+    "octets": 784416,
+    "sha256": "9ea7a8b127a9dfa36de0b0cf9c2e26293beea5c37a0fc988fb9308b63160f282"
+  },
+  {
+    "fichier": "pg13951.txt",
+    "source": "https://www.gutenberg.org/cache/epub/13951/pg13951.txt",
+    "octets": 1450561,
+    "sha256": "46c01913219e6ff165256b8cbcaec7034b004f785a147341911b3caee70ccfcc"
+  },
+  {
+    "fichier": "pg5097.txt",
+    "source": "https://www.gutenberg.org/cache/epub/5097/pg5097.txt",
+    "octets": 942632,
+    "sha256": "53507b025cd3580f4fbfa546baabb36f25adfb48b581c5b5016d91ad69d36c68"
+  },
+  {
+    "fichier": "pg4791.txt",
+    "source": "https://www.gutenberg.org/cache/epub/4791/pg4791.txt",
+    "octets": 461113,
+    "sha256": "cc2c572afc2b2965e252ed8626c4e023b54e272f3a83594f10bc8d7bc6a9f5d6"
+  }
+]

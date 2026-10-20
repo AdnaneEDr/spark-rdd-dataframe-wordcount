@@ -1,0 +1,17 @@
+SPARK_HOME = C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\work\spark
+
+bin /
+conf /
+data /
+examples /
+jars /
+kubernetes /
+LICENSE
+licenses /
+NOTICE
+python /
+R /
+README.md
+RELEASE
+sbin /
+yarn /

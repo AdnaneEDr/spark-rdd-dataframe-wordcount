@@ -1,0 +1,68 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+26/10/20 17:25:55 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\work\spark\python\lib\pyspark.zip\pyspark\testing\utils.py:127: FutureWarning: PySpark does not yet fully support pandas >= 3.0.0. Some features may not work correctly. It is recommended to use pandas < 3.0.0 for now.
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/10/20 17:26:00 INFO SparkContext: Running Spark version 4.2.0
+26/10/20 17:26:00 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/10/20 17:26:00 INFO SparkContext: Java version 17.0.20.1+1
+26/10/20 17:26:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/20 17:26:00 INFO ResourceUtils: ==============================================================
+26/10/20 17:26:00 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/20 17:26:00 INFO ResourceUtils: ==============================================================
+26/10/20 17:26:00 INFO SparkContext: Submitted application: TP1 Installation Spark
+26/10/20 17:26:00 INFO SecurityManager: Changing view acls to: lenovo
+26/10/20 17:26:00 INFO SecurityManager: Changing modify acls to: lenovo
+26/10/20 17:26:00 INFO SecurityManager: Changing view acls groups to: lenovo
+26/10/20 17:26:00 INFO SecurityManager: Changing modify acls groups to: lenovo
+26/10/20 17:26:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: lenovo groups with view permissions: EMPTY; users with modify permissions: lenovo; groups with modify permissions: EMPTY; RPC SSL disabled
+26/10/20 17:26:01 INFO Utils: Successfully started service 'sparkDriver' on port 55793.
+26/10/20 17:26:01 INFO SparkEnv: Registering MapOutputTracker
+26/10/20 17:26:01 INFO SparkEnv: Registering BlockManagerMaster
+26/10/20 17:26:01 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/20 17:26:01 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/20 17:26:01 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/20 17:26:01 INFO DiskBlockManager: Created local directory at C:\Users\lenovo\AppData\Local\Temp\blockmgr-38ed15a7-905a-49ac-82e2-70f9d47ff43c
+26/10/20 17:26:01 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/20 17:26:01 INFO JettyUtils: Start Jetty 127.0.0.1:4040 for SparkUI
+26/10/20 17:26:02 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/20 17:26:02 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/20 17:26:02 INFO ResourceProfile: Limiting resource is cpu
+26/10/20 17:26:02 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/20 17:26:02 INFO SecurityManager: Changing view acls to: lenovo
+26/10/20 17:26:02 INFO SecurityManager: Changing modify acls to: lenovo
+26/10/20 17:26:02 INFO SecurityManager: Changing view acls groups to: lenovo
+26/10/20 17:26:02 INFO SecurityManager: Changing modify acls groups to: lenovo
+26/10/20 17:26:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: lenovo groups with view permissions: EMPTY; users with modify permissions: lenovo; groups with modify permissions: EMPTY; RPC SSL disabled
+26/10/20 17:26:02 INFO Executor: Starting executor ID driver on host kubernetes.docker.internal
+26/10/20 17:26:02 INFO Executor: Running Spark version 4.2.0
+26/10/20 17:26:02 INFO Executor: OS info Windows 11, 10.0, amd64
+26/10/20 17:26:02 INFO Executor: Java version 17.0.20.1+1
+26/10/20 17:26:02 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/20 17:26:02 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@e2c8684 for default.
+26/10/20 17:26:02 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 55794.
+26/10/20 17:26:02 INFO NettyBlockTransferService: Server created on kubernetes.docker.internal:55794
+26/10/20 17:26:02 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/20 17:26:02 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, kubernetes.docker.internal, 55794, None)
+26/10/20 17:26:02 INFO BlockManagerMasterEndpoint: Registering block manager kubernetes.docker.internal:55794 with 1048.8 MiB RAM, BlockManagerId(driver, kubernetes.docker.internal, 55794, None)
+26/10/20 17:26:02 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, kubernetes.docker.internal, 55794, None)
+26/10/20 17:26:02 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, kubernetes.docker.internal, 55794, None)
+SPARK_VERSION=4.2.0
++---+
+| id|
++---+
+|  0|
+|  1|
+|  2|
+|  3|
+|  4|
++---+
+
++------+
+| somme|
++------+
+|500500|
++------+
+
+SHUFFLE_PARTITIONS=8
+UI=http://kubernetes.docker.internal:4040
+PRET_CAPTURE

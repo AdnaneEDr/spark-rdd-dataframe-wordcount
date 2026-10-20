@@ -1,0 +1,25 @@
+WORDCOUNT - CINQ LIVRES BRUTS
+
+Lignes : 93311
+Partitions RDD : 5
+Mots de plus de 2 lettres : 496765
+Mots uniques : 31052
+
+TOP 15
+que                          9386
+les                          9112
+vous                         7370
+une                          6923
+qui                          6503
+des                          5599
+est                          5496
+pas                          5347
+dans                         5172
+était                        4465
+son                          3918
+dit                          3784
+nous                         3667
+mais                         3633
+pour                         3614
+
+Égalité des dictionnaires complets RDD / DataFrame : True

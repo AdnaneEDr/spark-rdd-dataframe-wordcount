@@ -1,0 +1,22 @@
+MINI.TXT - RDD / DataFrame / SQL
+
+Lignes : 3
+map(split).count() : 3
+flatMap(split).count() : 20
+Mots après normalisation : 19
+Mots de plus de 2 lettres : 13
+Mots uniques : 9
+
+mer                             4
+est                             2
+belle                           1
+calme                           1
+capitaine                       1
+nautilus                        1
+plonge                          1
+regarde                         1
+sous                            1
+
+Top 3 SQL : [['mer', 4], ['est', 2], ['belle', 1]]
+Égalité RDD / DataFrame : True
+Plus de 5 lettres : capitaine, nautilus, plonge, regarde

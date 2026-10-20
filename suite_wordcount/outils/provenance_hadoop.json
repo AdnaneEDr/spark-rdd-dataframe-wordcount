@@ -1,0 +1,12 @@
+{
+  "winutils.exe": {
+    "url": "https://raw.githubusercontent.com/cdarlint/winutils/master/hadoop-3.3.6/bin/winutils.exe",
+    "sha256": "496a591eb1e67df2a620f710d529ba6ddfe1c19149e6647cc4e320bb0efd8553",
+    "octets": 119296
+  },
+  "hadoop.dll": {
+    "url": "https://raw.githubusercontent.com/cdarlint/winutils/master/hadoop-3.3.6/bin/hadoop.dll",
+    "sha256": "d7ab36a68518748cef142be2da5069b4c763c2cd764c1d2e6ac48c7200405be3",
+    "octets": 78848
+  }
+}

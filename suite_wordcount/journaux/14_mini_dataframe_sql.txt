@@ -1,0 +1,19 @@
+{
+  "schema": "struct<value:string>",
+  "table": "+---------+-----+\n|mot      |count|\n+---------+-----+\n|mer      |4    |\n|est      |2    |\n|belle    |1    |\n|calme    |1    |\n|capitaine|1    |\n|nautilus |1    |\n|plonge   |1    |\n|regarde  |1    |\n|sous     |1    |\n+---------+-----+\n",
+  "sql_top3": [
+    [
+      "mer",
+      4
+    ],
+    [
+      "est",
+      2
+    ],
+    [
+      "belle",
+      1
+    ]
+  ],
+  "egalite_RDD_DataFrame": true
+}

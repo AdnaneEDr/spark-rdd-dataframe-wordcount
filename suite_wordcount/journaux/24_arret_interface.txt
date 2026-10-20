@@ -1,0 +1,2 @@
+Arrêt demandé par ARRETER_UI ; le script appelle spark.stop().
+Port 4040 : connexion refusée après spark.stop()

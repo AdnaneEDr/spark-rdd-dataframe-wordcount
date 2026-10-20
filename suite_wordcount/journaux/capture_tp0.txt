@@ -1,0 +1,10 @@
+Compléments TP-0 (installation existante réutilisée)
+
+local[2] : master=local[2] ; defaultParallelism=2
+local[*] : master=local[*] ; defaultParallelism=16
+Processeurs logiques : 16
+
+Somme des carrés de 1 à 100 : 338350
+RDD des carrés de [1,2,3,4] : [1, 4, 9, 16]
+
+HADOOP_HOME : support natif Windows ajouté ; exports validés.

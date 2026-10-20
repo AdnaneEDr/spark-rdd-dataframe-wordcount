@@ -1,0 +1,2121 @@
+<!DOCTYPE html><html data-bs-theme="light"><head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/static/bootstrap.min.css" type="text/css"><link rel="stylesheet" href="/static/webui.css" type="text/css"><script src="/static/sorttable.js"></script><script src="/static/jquery.min.js"></script><script src="/static/bootstrap.bundle.min.js"></script><script src="/static/initialize-tooltips.js"></script><script src="/static/table.js"></script><script src="/static/log-view.js"></script><script src="/static/webui.js"></script><script src="/static/scroll-button.js" type="module"></script><script nonce="1cbf7ffd-7cf0-4b72-bb5e-36f8b434d8d6">setUIRoot('')</script>
+        <script nonce="1cbf7ffd-7cf0-4b72-bb5e-36f8b434d8d6">document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('spark-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))</script>
+        <script nonce="1cbf7ffd-7cf0-4b72-bb5e-36f8b434d8d6">setAppBasePath('')</script>
+        
+        
+        <link rel="stylesheet" href="/static/vis-timeline-graph2d.min.css" type="text/css"><link rel="stylesheet" href="/static/timeline-view.css" type="text/css"><script src="/static/vis-timeline-graph2d.min.js"></script><style type="text/css">.vis-time-axis{overflow:hidden;position:relative}.vis-time-axis.vis-foreground{left:0;top:0;width:100%}.vis-time-axis.vis-background{height:100%;left:0;position:absolute;top:0;width:100%}.vis-time-axis .vis-text{box-sizing:border-box;color:#4d4d4d;overflow:hidden;padding:3px;position:absolute;white-space:nowrap}.vis-time-axis .vis-text.vis-measure{margin-left:0;margin-right:0;padding-left:0;padding-right:0;position:absolute;visibility:hidden}.vis-time-axis .vis-grid.vis-vertical{border-left:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-vertical-rtl{border-right:1px solid;position:absolute}.vis-time-axis .vis-grid.vis-minor{border-color:#e5e5e5}.vis-time-axis .vis-grid.vis-major{border-color:#bfbfbf}</style><style type="text/css">.vis .overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}.vis-active{box-shadow:0 0 10px #86d5f8}</style><style type="text/css">.vis-custom-time{background-color:#6e94ff;cursor:move;width:2px;z-index:1}.vis-custom-time>.vis-custom-time-marker{background-color:inherit;color:#fff;cursor:auto;font-size:12px;padding:3px 5px;top:0;white-space:nowrap;z-index:inherit}</style><style type="text/css">.vis-current-time{background-color:#ff7f6e;pointer-events:none;width:2px;z-index:1}.vis-rolling-mode-btn{background:#3876c2;border-radius:50%;color:#fff;cursor:pointer;font-size:28px;font-weight:700;height:40px;opacity:.8;position:absolute;right:20px;text-align:center;top:7px;width:40px}.vis-rolling-mode-btn:before{content:"\26F6"}.vis-rolling-mode-btn:hover{opacity:1}</style><style type="text/css">.vis-panel{box-sizing:border-box;margin:0;padding:0;position:absolute}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right,.vis-panel.vis-top{border:1px #bfbfbf}.vis-panel.vis-center,.vis-panel.vis-left,.vis-panel.vis-right{border-bottom-style:solid;border-top-style:solid;overflow:hidden}.vis-left.vis-panel.vis-vertical-scroll,.vis-right.vis-panel.vis-vertical-scroll{height:100%;overflow-x:hidden;overflow-y:scroll}.vis-left.vis-panel.vis-vertical-scroll{direction:rtl}.vis-left.vis-panel.vis-vertical-scroll .vis-content,.vis-right.vis-panel.vis-vertical-scroll{direction:ltr}.vis-right.vis-panel.vis-vertical-scroll .vis-content{direction:rtl}.vis-panel.vis-bottom,.vis-panel.vis-center,.vis-panel.vis-top{border-left-style:solid;border-right-style:solid}.vis-background{overflow:hidden}.vis-panel>.vis-content{position:relative}.vis-panel .vis-shadow{box-shadow:0 0 10px rgba(0,0,0,.8);height:1px;position:absolute;width:100%}.vis-panel .vis-shadow.vis-top{left:0;top:-1px}.vis-panel .vis-shadow.vis-bottom{bottom:-1px;left:0}</style><style type="text/css">.vis-graph-group0{fill:#4f81bd;fill-opacity:0;stroke-width:2px;stroke:#4f81bd}.vis-graph-group1{fill:#f79646;fill-opacity:0;stroke-width:2px;stroke:#f79646}.vis-graph-group2{fill:#8c51cf;fill-opacity:0;stroke-width:2px;stroke:#8c51cf}.vis-graph-group3{fill:#75c841;fill-opacity:0;stroke-width:2px;stroke:#75c841}.vis-graph-group4{fill:#ff0100;fill-opacity:0;stroke-width:2px;stroke:#ff0100}.vis-graph-group5{fill:#37d8e6;fill-opacity:0;stroke-width:2px;stroke:#37d8e6}.vis-graph-group6{fill:#042662;fill-opacity:0;stroke-width:2px;stroke:#042662}.vis-graph-group7{fill:#00ff26;fill-opacity:0;stroke-width:2px;stroke:#00ff26}.vis-graph-group8{fill:#f0f;fill-opacity:0;stroke-width:2px;stroke:#f0f}.vis-graph-group9{fill:#8f3938;fill-opacity:0;stroke-width:2px;stroke:#8f3938}.vis-timeline .vis-fill{fill-opacity:.1;stroke:none}.vis-timeline .vis-bar{fill-opacity:.5;stroke-width:1px}.vis-timeline .vis-point{stroke-width:2px;fill-opacity:1}.vis-timeline .vis-legend-background{stroke-width:1px;fill-opacity:.9;fill:#fff;stroke:#c2c2c2}.vis-timeline .vis-outline{stroke-width:1px;fill-opacity:1;fill:#fff;stroke:#e5e5e5}.vis-timeline .vis-icon-fill{fill-opacity:.3;stroke:none}</style><style type="text/css">.vis-timeline{border:1px solid #bfbfbf;box-sizing:border-box;margin:0;overflow:hidden;padding:0;position:relative}.vis-loading-screen{height:100%;left:0;position:absolute;top:0;width:100%}</style><style type="text/css">.vis [class*=span]{min-height:0;width:auto}</style><style type="text/css">.vis-item{background-color:#d5ddf6;border-color:#97b0f8;border-width:1px;color:#1a1a1a;display:inline-block;position:absolute;z-index:1}.vis-item.vis-selected{background-color:#fff785;border-color:#ffc200;z-index:2}.vis-editable.vis-selected{cursor:move}.vis-item.vis-point.vis-selected{background-color:#fff785}.vis-item.vis-box{border-radius:2px;border-style:solid;text-align:center}.vis-item.vis-point{background:none}.vis-item.vis-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}.vis-item.vis-range{border-radius:2px;border-style:solid;box-sizing:border-box}.vis-item.vis-background{background-color:rgba(213,221,246,.4);border:none;box-sizing:border-box;margin:0;padding:0}.vis-item .vis-item-overflow{height:100%;margin:0;overflow:hidden;padding:0;position:relative;width:100%}.vis-item-visible-frame{white-space:nowrap}.vis-item.vis-range .vis-item-content{display:inline-block;position:relative}.vis-item.vis-background .vis-item-content{display:inline-block;position:absolute}.vis-item.vis-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item .vis-item-content{box-sizing:border-box;padding:5px;white-space:nowrap}.vis-item .vis-onUpdateTime-tooltip{background:#4f81bd;border-radius:1px;color:#fff;padding:5px;position:absolute;text-align:center;transition:.4s;-o-transition:.4s;-moz-transition:.4s;-webkit-transition:.4s;white-space:nowrap;width:200px}.vis-item .vis-delete,.vis-item .vis-delete-rtl{box-sizing:border-box;cursor:pointer;height:24px;padding:0 5px;position:absolute;top:0;-webkit-transition:background .2s linear;-moz-transition:background .2s linear;-ms-transition:background .2s linear;-o-transition:background .2s linear;transition:background .2s linear;width:24px}.vis-item .vis-delete{right:-24px}.vis-item .vis-delete-rtl{left:-24px}.vis-item .vis-delete-rtl:after,.vis-item .vis-delete:after{color:red;content:"\00D7";font-family:arial,sans-serif;font-size:22px;font-weight:700;-webkit-transition:color .2s linear;-moz-transition:color .2s linear;-ms-transition:color .2s linear;-o-transition:color .2s linear;transition:color .2s linear}.vis-item .vis-delete-rtl:hover,.vis-item .vis-delete:hover{background:red}.vis-item .vis-delete-rtl:hover:after,.vis-item .vis-delete:hover:after{color:#fff}.vis-item .vis-drag-center{cursor:move;height:100%;left:0;position:absolute;top:0;width:100%}.vis-item.vis-range .vis-drag-left{cursor:w-resize;left:-4px}.vis-item.vis-range .vis-drag-left,.vis-item.vis-range .vis-drag-right{height:100%;max-width:20%;min-width:2px;position:absolute;top:0;width:24px}.vis-item.vis-range .vis-drag-right{cursor:e-resize;right:-4px}.vis-range.vis-item.vis-readonly .vis-drag-left,.vis-range.vis-item.vis-readonly .vis-drag-right{cursor:auto}.vis-item.vis-cluster{border-radius:2px;border-style:solid;text-align:center;vertical-align:center}.vis-item.vis-cluster-line{border-left-style:solid;border-left-width:1px;padding:0;position:absolute;width:0}.vis-item.vis-cluster-dot{border-radius:4px;border-style:solid;border-width:4px;padding:0;position:absolute}</style><style type="text/css">div.vis-tooltip{background-color:#f5f4ed;border:1px solid #808074;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;box-shadow:3px 3px 10px rgba(0,0,0,.2);color:#000;font-family:verdana;font-size:14px;padding:5px;pointer-events:none;position:absolute;visibility:hidden;white-space:nowrap;z-index:5}</style><style type="text/css">.vis-itemset{box-sizing:border-box;margin:0;padding:0;position:relative}.vis-itemset .vis-background,.vis-itemset .vis-foreground{height:100%;overflow:visible;position:absolute;width:100%}.vis-axis{height:0;left:0;position:absolute;width:100%;z-index:1}.vis-foreground .vis-group{border-bottom:1px solid #bfbfbf;box-sizing:border-box;position:relative}.vis-foreground .vis-group:last-child{border-bottom:none}.vis-nesting-group{cursor:pointer}.vis-label.vis-nested-group.vis-group-level-unknown-but-gte1{background:#f5f5f5}.vis-label.vis-nested-group.vis-group-level-0{background-color:#fff}.vis-ltr .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-left:0}.vis-rtl .vis-label.vis-nested-group.vis-group-level-0 .vis-inner{padding-right:0}.vis-label.vis-nested-group.vis-group-level-1{background-color:rgba(0,0,0,.05)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-left:15px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-1 .vis-inner{padding-right:15px}.vis-label.vis-nested-group.vis-group-level-2{background-color:rgba(0,0,0,.1)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-left:30px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-2 .vis-inner{padding-right:30px}.vis-label.vis-nested-group.vis-group-level-3{background-color:rgba(0,0,0,.15)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-left:45px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-3 .vis-inner{padding-right:45px}.vis-label.vis-nested-group.vis-group-level-4{background-color:rgba(0,0,0,.2)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-left:60px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-4 .vis-inner{padding-right:60px}.vis-label.vis-nested-group.vis-group-level-5{background-color:rgba(0,0,0,.25)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-left:75px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-5 .vis-inner{padding-right:75px}.vis-label.vis-nested-group.vis-group-level-6{background-color:rgba(0,0,0,.3)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-left:90px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-6 .vis-inner{padding-right:90px}.vis-label.vis-nested-group.vis-group-level-7{background-color:rgba(0,0,0,.35)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-left:105px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-7 .vis-inner{padding-right:105px}.vis-label.vis-nested-group.vis-group-level-8{background-color:rgba(0,0,0,.4)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-left:120px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-8 .vis-inner{padding-right:120px}.vis-label.vis-nested-group.vis-group-level-9{background-color:rgba(0,0,0,.45)}.vis-ltr .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-left:135px}.vis-rtl .vis-label.vis-nested-group.vis-group-level-9 .vis-inner{padding-right:135px}.vis-label.vis-nested-group{background-color:rgba(0,0,0,.5)}.vis-ltr .vis-label.vis-nested-group .vis-inner{padding-left:150px}.vis-rtl .vis-label.vis-nested-group .vis-inner{padding-right:150px}.vis-group-level-unknown-but-gte1{border:1px solid red}.vis-label.vis-nesting-group:before{display:inline-block;width:15px}.vis-label.vis-nesting-group.expanded:before{content:"\25BC"}.vis-label.vis-nesting-group.collapsed:before{content:"\25B6"}.vis-rtl .vis-label.vis-nesting-group.collapsed:before{content:"\25C0"}.vis-ltr .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-left:15px}.vis-rtl .vis-label:not(.vis-nesting-group):not(.vis-group-level-0){padding-right:15px}.vis-overlay{height:100%;left:0;position:absolute;top:0;width:100%;z-index:10}</style><style type="text/css">.vis-labelset{overflow:hidden}.vis-labelset,.vis-labelset .vis-label{box-sizing:border-box;position:relative}.vis-labelset .vis-label{border-bottom:1px solid #bfbfbf;color:#4d4d4d;left:0;top:0;width:100%}.vis-labelset .vis-label.draggable{cursor:pointer}.vis-group-is-dragging{background:rgba(0,0,0,.1)}.vis-labelset .vis-label:last-child{border-bottom:none}.vis-labelset .vis-label .vis-inner{display:inline-block;padding:5px}.vis-labelset .vis-label .vis-inner.vis-hidden{padding:0}</style><style type="text/css">div.vis-configuration{display:block;float:left;font-size:12px;position:relative}div.vis-configuration-wrapper{display:block;width:700px}div.vis-configuration-wrapper:after{clear:both;content:"";display:block}div.vis-configuration.vis-config-option-container{background-color:#fff;border:2px solid #f7f8fa;border-radius:4px;display:block;left:10px;margin-top:20px;padding-left:5px;width:495px}div.vis-configuration.vis-config-button{background-color:#f7f8fa;border:2px solid #ceced0;border-radius:4px;cursor:pointer;display:block;height:25px;left:10px;line-height:25px;margin-bottom:30px;margin-top:20px;padding-left:5px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-button.hover{background-color:#4588e6;border:2px solid #214373;color:#fff}div.vis-configuration.vis-config-item{display:block;float:left;height:25px;line-height:25px;vertical-align:middle;width:495px}div.vis-configuration.vis-config-item.vis-config-s2{background-color:#f7f8fa;border-radius:3px;left:10px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s3{background-color:#e4e9f0;border-radius:3px;left:20px;padding-left:5px}div.vis-configuration.vis-config-item.vis-config-s4{background-color:#cfd8e6;border-radius:3px;left:30px;padding-left:5px}div.vis-configuration.vis-config-header{font-size:18px;font-weight:700}div.vis-configuration.vis-config-label{height:25px;line-height:25px;width:120px}div.vis-configuration.vis-config-label.vis-config-s3{width:110px}div.vis-configuration.vis-config-label.vis-config-s4{width:100px}div.vis-configuration.vis-config-colorBlock{border:1px solid #444;border-radius:2px;cursor:pointer;height:19px;margin:0;padding:0;top:1px;width:30px}input.vis-configuration.vis-config-checkbox{left:-5px}input.vis-configuration.vis-config-rangeinput{margin:0;padding:1px;pointer-events:none;position:relative;top:-5px;width:60px}input.vis-configuration.vis-config-range{-webkit-appearance:none;background-color:transparent;border:0 solid #fff;height:20px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-runnable-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:5px;width:300px}input.vis-configuration.vis-config-range::-webkit-slider-thumb{-webkit-appearance:none;background:#3876c2;background:-moz-linear-gradient(top,#3876c2 0,#385380 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#3876c2),color-stop(100%,#385380));background:-webkit-linear-gradient(top,#3876c2,#385380);background:-o-linear-gradient(top,#3876c2 0,#385380 100%);background:-ms-linear-gradient(top,#3876c2 0,#385380 100%);background:linear-gradient(180deg,#3876c2 0,#385380);border:1px solid #14334b;border-radius:50%;box-shadow:0 0 1px 0 #111927;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#3876c2",endColorstr="#385380",GradientType=0);height:17px;margin-top:-7px;width:17px}input.vis-configuration.vis-config-range:focus{outline:none}input.vis-configuration.vis-config-range:focus::-webkit-slider-runnable-track{background:#9d9d9d;background:-moz-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#9d9d9d),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#9d9d9d,#c8c8c8 99%);background:-o-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#9d9d9d 0,#c8c8c8 99%);background:linear-gradient(180deg,#9d9d9d 0,#c8c8c8 99%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#9d9d9d",endColorstr="#c8c8c8",GradientType=0)}input.vis-configuration.vis-config-range::-moz-range-track{background:#dedede;background:-moz-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#dedede),color-stop(99%,#c8c8c8));background:-webkit-linear-gradient(top,#dedede,#c8c8c8 99%);background:-o-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:-ms-linear-gradient(top,#dedede 0,#c8c8c8 99%);background:linear-gradient(180deg,#dedede 0,#c8c8c8 99%);border:1px solid #999;border-radius:3px;box-shadow:0 0 3px 0 #aaa;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#dedede",endColorstr="#c8c8c8",GradientType=0);height:10px;width:300px}input.vis-configuration.vis-config-range::-moz-range-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:-moz-focusring{outline:1px solid #fff;outline-offset:-1px}input.vis-configuration.vis-config-range::-ms-track{background:transparent;border-color:transparent;border-width:6px 0;color:transparent;height:5px;width:300px}input.vis-configuration.vis-config-range::-ms-fill-lower{background:#777;border-radius:10px}input.vis-configuration.vis-config-range::-ms-fill-upper{background:#ddd;border-radius:10px}input.vis-configuration.vis-config-range::-ms-thumb{background:#385380;border:none;border-radius:50%;height:16px;width:16px}input.vis-configuration.vis-config-range:focus::-ms-fill-lower{background:#888}input.vis-configuration.vis-config-range:focus::-ms-fill-upper{background:#ccc}.vis-configuration-popup{background:rgba(57,76,89,.85);border:2px solid #f2faff;border-radius:4px;color:#fff;font-size:14px;height:30px;line-height:30px;position:absolute;text-align:center;-webkit-transition:opacity .3s ease-in-out;-moz-transition:opacity .3s ease-in-out;transition:opacity .3s ease-in-out;width:150px}.vis-configuration-popup:after,.vis-configuration-popup:before{border:solid transparent;content:" ";height:0;left:100%;pointer-events:none;position:absolute;top:50%;width:0}.vis-configuration-popup:after{border-color:rgba(136,183,213,0) rgba(136,183,213,0) rgba(136,183,213,0) rgba(57,76,89,.85);border-width:8px;margin-top:-8px}.vis-configuration-popup:before{border-color:rgba(194,225,245,0) rgba(194,225,245,0) rgba(194,225,245,0) #f2faff;border-width:12px;margin-top:-12px}</style><style type="text/css">.vis-panel.vis-background.vis-horizontal .vis-grid.vis-horizontal{border-bottom:1px solid;height:0;position:absolute;width:100%}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-minor{border-color:#e5e5e5}.vis-panel.vis-background.vis-horizontal .vis-grid.vis-major{border-color:#bfbfbf}.vis-data-axis .vis-y-axis.vis-major{color:#4d4d4d;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-major.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-minor{color:#bebebe;position:absolute;white-space:nowrap;width:100%}.vis-data-axis .vis-y-axis.vis-minor.vis-measure{border:0;margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title{bottom:20px;color:#4d4d4d;position:absolute;text-align:center;white-space:nowrap}.vis-data-axis .vis-y-axis.vis-title.vis-measure{margin:0;padding:0;visibility:hidden;width:auto}.vis-data-axis .vis-y-axis.vis-title.vis-left{bottom:0;-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-ms-transform:rotate(-90deg);-o-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:left top;-moz-transform-origin:left top;-ms-transform-origin:left top;-o-transform-origin:left top;transform-origin:left bottom}.vis-data-axis .vis-y-axis.vis-title.vis-right{bottom:0;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg);-webkit-transform-origin:right bottom;-moz-transform-origin:right bottom;-ms-transform-origin:right bottom;-o-transform-origin:right bottom;transform-origin:right bottom}.vis-legend{background-color:rgba(247,252,255,.65);border:1px solid #b3b3b3;box-shadow:2px 2px 10px hsla(0,0%,60%,.55);padding:5px}.vis-legend-text{display:inline-block;white-space:nowrap}</style><script src="/static/timeline-view.js"></script>
+        <link rel="shortcut icon" href="/static/spark-logo.svg">
+        <title>Suite TP Spark - WordCount RDD DataFrame SQL - Spark Jobs</title>
+      </head>
+      <body class="d-flex flex-column min-vh-100">
+        <div id="loading-overlay" class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+          <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <h3 class="mt-2">Loading...</h3>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
+          <div class="navbar-header">
+            <div class="navbar-brand">
+              <a href="/">
+                <img class="spark-logo" src="/static/spark-logo.svg" alt="Spark Logo" height="36">
+              </a>
+            </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto"><li class="nav-item active">
+        <a class="nav-link" href="/jobs/">Jobs</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/stages/">Stages</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/storage/">Storage</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/environment/">Environment</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/executors/">Executors</a>
+      </li><li class="nav-item">
+        <a class="nav-link" href="/SQL/">SQL / DataFrame</a>
+      </li></ul>
+            <span class="navbar-text navbar-right d-none d-md-block">
+              <strong title="Suite TP Spark - WordCount RDD DataFrame SQL" class="text-nowrap">Suite TP Spark - WordCount RDD D...</strong>
+              <span class="text-nowrap">application UI</span>
+            </span>
+            <button id="theme-toggle" class="btn btn-sm btn-link text-decoration-none fs-5 ms-2 p-0" type="button" title="Switch to dark mode">◑</button>
+          </div>
+        </nav>
+        <div class="container-fluid flex-fill">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="align-bottom text-nowrap overflow-hidden text-truncate">
+                Spark Jobs
+                <sup>
+      (<a data-bs-toggle="tooltip" title="A job is triggered by an action, like count() or saveAsTextFile(). Click on a job to see information about the stages of tasks inside it.">?</a>)
+    </sup>
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div>
+        <ul class="list-unstyled">
+          <li>
+            <strong>Scheduling Mode: </strong>
+            FIFO
+          </li>
+          
+          <li id="completed-summary">
+                <a href="#completed"><strong>Completed Jobs:</strong></a>
+                43
+              </li>
+          
+        </ul>
+      </div><span class="expand-application-timeline">
+      <span class="expand-application-timeline-arrow arrow-closed"></span>
+      <a data-bs-toggle="tooltip" title="Shows when jobs started and ended and when executors joined or left. Drag to scroll.
+       Click Enable Zooming and use mouse wheel to zoom in/out.">
+      Event Timeline
+    </a>
+    </span><div id="application-timeline" class="collapsed" style="position: relative; display: none;">
+      
+      
+      <div class="control-panel">
+        <div id="application-timeline-zoom-lock">
+          <input type="checkbox" style="">
+          <span>Enable zooming</span>
+        </div>
+      </div>
+    <div class="vis-timeline vis-bottom vis-ltr" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); visibility: hidden; height: 1602px;"><div class="vis-panel vis-background" style="height: 1602px; width: 1419px; left: 0px; top: 0px;"></div><div class="vis-panel vis-background vis-vertical" style="height: 1602px; width: 1260px; left: 161px; top: 0px;"><div class="vis-axis" style="top: 1562px; left: 0px;"><div class="vis-group"><div class="vis-item vis-dot executor added vis-readonly" style="transform: translate(-3.48334px, -4px);"></div></div><div class="vis-group"></div></div><div class="vis-time-axis vis-background"><div class="vis-grid vis-vertical vis-minor vis-h16-h20  vis-today  vis-even" style="width: 92.6848px; height: 1583px; transform: translate(-38.0873px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h20-h24  vis-today  vis-odd" style="width: 92.6848px; height: 1583px; transform: translate(54.5975px, -1px);"></div><div class="vis-grid vis-vertical vis-major vis-h0-h4  vis-tomorrow  vis-even" style="width: 92.6848px; height: 1603px; transform: translate(147.282px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h4-h8  vis-tomorrow  vis-odd" style="width: 92.6848px; height: 1583px; transform: translate(239.967px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h8-h12  vis-tomorrow  vis-even" style="width: 92.6848px; height: 1583px; transform: translate(332.652px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h12-h16  vis-tomorrow  vis-odd" style="width: 92.6848px; height: 1583px; transform: translate(425.337px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h16-h20  vis-tomorrow  vis-even" style="width: 92.6848px; height: 1583px; transform: translate(518.022px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h20-h24  vis-tomorrow  vis-odd" style="width: 92.6848px; height: 1583px; transform: translate(610.706px, -1px);"></div><div class="vis-grid vis-vertical vis-major vis-h0-h4  vis-even" style="width: 92.6848px; height: 1603px; transform: translate(703.391px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h4-h8  vis-odd" style="width: 92.6848px; height: 1583px; transform: translate(796.076px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h8-h12  vis-even" style="width: 92.6848px; height: 1583px; transform: translate(888.761px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h12-h16  vis-odd" style="width: 92.6848px; height: 1583px; transform: translate(981.446px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h16-h20  vis-even" style="width: 92.6848px; height: 1583px; transform: translate(1074.13px, -1px);"></div><div class="vis-grid vis-vertical vis-minor vis-h20-h24  vis-odd" style="width: 92.6848px; height: 1583px; transform: translate(1166.82px, -1px);"></div><div class="vis-grid vis-vertical vis-major vis-h0-h4  vis-even" style="width: 92.6848px; height: 1603px; transform: translate(1259.5px, -1px);"></div></div></div><div class="vis-panel vis-background vis-horizontal" style="height: 1563px; width: 1419px; left: 0px; top: -1px;"></div><div class="vis-panel vis-center" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 1563px; width: 1260px; left: 160px; top: -1px;"><div class="vis-content" style="left: 0px; transform: translateY(0px);"><div class="vis-itemset" style="height: 1561px;"><div class="vis-background"><div class="vis-group" style="height: 0px;"><div style="visibility: hidden; position: absolute;"></div></div><div class="vis-group" style="height: 84px;"><div style="visibility: hidden; position: absolute;"></div><div class="vis-item vis-line executor added vis-readonly" style="transform: translateX(0.0166575px); height: 1482px; bottom: 0px;"></div></div><div class="vis-group" style="height: 1477px;"><div style="visibility: hidden; position: absolute;"></div></div></div><div class="vis-foreground"><div class="vis-group" style="height: 84px;"><div class="vis-item vis-box executor added vis-readonly" style="transform: translate(0.0166575px, 55px);"><div class="vis-item-content"><div class="executor-event-content" data-bs-toggle="tooltip" data-bs-html="true">Executor driver added</div></div></div></div><div class="vis-group" style="height: 1477px;"><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.0857076px); width: 1px; top: 1433px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">first at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:27 (Job 0)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.0932061px); width: 1px; top: 1399px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">first at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:27 (Job 1)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.0968105px); width: 1px; top: 1365px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:28 (Job 2)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.112419px); width: 1px; top: 1331px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:32 (Job 3)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.117459px); width: 1px; top: 1297px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:35 (Job 4)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.161194px); width: 1px; top: 1263px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36 (Job 5)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.185627px); width: 1px; top: 1229px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">runJob at PythonRDD.scala:218 (Job 6)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.200946px); width: 1px; top: 1195px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36 (Job 7)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.222379px); width: 1px; top: 1161px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36 (Job 8)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.245505px); width: 1px; top: 1127px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36 (Job 9)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.271811px); width: 1px; top: 1093px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36 (Job 10)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.294223px); width: 1px; top: 1059px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36 (Job 11)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.326688px); width: 1px; top: 1025px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 12)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.351919px); width: 1px; top: 991px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 13)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.354938px); width: 1px; top: 957px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42 (Job 14)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.356264px); width: 1px; top: 923px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42 (Job 15)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.356991px); width: 1px; top: 889px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42 (Job 16)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.359315px); width: 1px; top: 855px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42 (Job 17)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.364631px); width: 1px; top: 821px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:45 (Job 18)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.365918px); width: 1px; top: 787px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:45 (Job 19)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.367695px); width: 1px; top: 753px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 20)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.369021px); width: 1px; top: 719px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 21)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.374196px); width: 1px; top: 685px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:53 (Job 22)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.520239px); width: 1px; top: 651px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:54 (Job 23)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.562384px); width: 1px; top: 617px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:54 (Job 24)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.609596px); width: 1px; top: 583px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">sortBy at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:56 (Job 25)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.651703px); width: 1px; top: 549px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">sortBy at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:56 (Job 26)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.689652px); width: 1px; top: 515px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">runJob at SparkHadoopWriter.scala:85 (Job 27)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.768872px); width: 1px; top: 481px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59 (Job 28)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.780129px); width: 1px; top: 447px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59 (Job 29)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.783676px); width: 1px; top: 413px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59 (Job 30)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.784532px); width: 1px; top: 379px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59 (Job 31)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.78625px); width: 1px; top: 345px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59 (Job 32)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.788535px); width: 1px; top: 311px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59 (Job 33)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.792217px); width: 1px; top: 277px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:61 (Job 34)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.795371px); width: 1px; top: 243px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 35)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.804774px); width: 1px; top: 209px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:68 (Job 36)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.871192px); width: 1px; top: 175px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:69 (Job 37)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.873574px); width: 1px; top: 141px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:69 (Job 38)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.876232px); width: 1px; top: 107px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76 (Job 39)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.882147px); width: 1px; top: 73px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76 (Job 40)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.882533px); width: 1px; top: 39px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76 (Job 41)</div></div></div><div class="vis-item-visible-frame"></div></div><div class="vis-item vis-range job application-timeline-object succeeded vis-readonly" style="transform: translateX(0.883074px); width: 1px; top: 5px;"><div class="vis-item-overflow"><div class="vis-item-content" style="transform: translateX(0px);"><div class="application-timeline-content" data-bs-html="true" data-bs-toggle="tooltip">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76 (Job 42)</div></div></div><div class="vis-item-visible-frame"></div></div></div></div></div></div><div class="vis-shadow vis-top" style="visibility: hidden;"></div><div class="vis-shadow vis-bottom" style="visibility: hidden;"></div></div><div class="vis-panel vis-left" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 1563px; left: 0px; top: -1px;"><div class="vis-content" style="left: 0px; top: 0px;"><div class="vis-labelset"><div class="vis-label vis-group-level-0" title="" style="height: 84px;"><div class="vis-inner"><div>Executors</div><div class="legend-area"><svg width="150px" height="55px">      <rect class="executor-added-legend" x="5px" y="5px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="17px">Added</text>      <rect class="executor-removed-legend" x="5px" y="30px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="42px">Removed</text>    </svg></div></div></div><div class="vis-label vis-group-level-0" title="" style="height: 1477px;"><div class="vis-inner"><div>Jobs</div><div class="legend-area"><svg width="150px" height="85px">      <rect class="succeeded-job-legend" x="5px" y="5px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="17px">Succeeded</text>      <rect class="failed-job-legend" x="5px" y="30px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="42px">Failed</text>      <rect class="running-job-legend" x="5px" y="55px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="67px">Running</text>    </svg></div></div></div></div></div><div class="vis-shadow vis-top" style="visibility: hidden;"></div><div class="vis-shadow vis-bottom" style="visibility: hidden;"></div></div><div class="vis-panel vis-right" style="height: 1563px; left: 1420px; top: -1px;"><div class="vis-content" style="left: 0px; top: 0px;"></div><div class="vis-shadow vis-top" style="visibility: hidden;"></div><div class="vis-shadow vis-bottom" style="visibility: hidden;"></div></div><div class="vis-panel vis-top" style="width: 1260px; left: 160px; top: 0px;"></div><div class="vis-panel vis-bottom" style="width: 1260px; left: 160px; top: 1562px;"><div class="vis-time-axis vis-foreground" style="height: 40px;"><div class="vis-text vis-minor vis-measure" style="position: absolute;">0</div><div class="vis-text vis-major vis-measure" style="position: absolute;">0</div><div class="vis-text vis-minor vis-h16-h20  vis-today  vis-even" style="transform: translate(-37.5873px, 0px); width: 92.6848px;">16</div><div class="vis-text vis-minor vis-h20-h24  vis-today  vis-odd" style="transform: translate(55.0975px, 0px); width: 92.6848px;">20</div><div class="vis-text vis-minor vis-h0-h4  vis-tomorrow  vis-even" style="transform: translate(147.782px, 0px); width: 92.6848px;">00</div><div class="vis-text vis-major vis-h0-h4  vis-tomorrow  vis-even" style="transform: translate(147.782px, 20px);"><div>2026/10/21</div></div><div class="vis-text vis-minor vis-h4-h8  vis-tomorrow  vis-odd" style="transform: translate(240.467px, 0px); width: 92.6848px;">04</div><div class="vis-text vis-minor vis-h8-h12  vis-tomorrow  vis-even" style="transform: translate(333.152px, 0px); width: 92.6848px;">08</div><div class="vis-text vis-minor vis-h12-h16  vis-tomorrow  vis-odd" style="transform: translate(425.837px, 0px); width: 92.6848px;">12</div><div class="vis-text vis-minor vis-h16-h20  vis-tomorrow  vis-even" style="transform: translate(518.522px, 0px); width: 92.6848px;">16</div><div class="vis-text vis-minor vis-h20-h24  vis-tomorrow  vis-odd" style="transform: translate(611.206px, 0px); width: 92.6848px;">20</div><div class="vis-text vis-minor vis-h0-h4  vis-even" style="transform: translate(703.891px, 0px); width: 92.6848px;">00</div><div class="vis-text vis-major vis-h0-h4  vis-even" style="transform: translate(703.891px, 20px);"><div>2026/10/22</div></div><div class="vis-text vis-minor vis-h4-h8  vis-odd" style="transform: translate(796.576px, 0px); width: 92.6848px;">04</div><div class="vis-text vis-minor vis-h8-h12  vis-even" style="transform: translate(889.261px, 0px); width: 92.6848px;">08</div><div class="vis-text vis-minor vis-h12-h16  vis-odd" style="transform: translate(981.946px, 0px); width: 92.6848px;">12</div><div class="vis-text vis-minor vis-h16-h20  vis-even" style="transform: translate(1074.63px, 0px); width: 92.6848px;">16</div><div class="vis-text vis-minor vis-h20-h24  vis-odd" style="transform: translate(1167.32px, 0px); width: 92.6848px;">20</div><div class="vis-text vis-minor vis-h0-h4  vis-even" style="transform: translate(1260px, 0px); width: 92.6848px;">00</div><div class="vis-text vis-major vis-h0-h4  vis-even" style="transform: translate(1260px, 20px);"><div>2026/10/23</div></div><div class="vis-text vis-major vis-h0-h4  vis-even" style="transform: translate(0px, 20px);"><div>2026/10/20</div></div></div></div><div class="vis-rolling-mode-btn" style="visibility: hidden;"></div></div><div class="vis-loading-screen"><div></div></div></div><script type="text/javascript" nonce="1cbf7ffd-7cf0-4b72-bb5e-36f8b434d8d6">
+      drawApplicationTimeline(
+[
+  {
+    'id': 'executors',
+    'content': '<div>Executors</div><div class="legend-area"><svg width="150px" height="55px">      <rect class="executor-added-legend" x="5px" y="5px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="17px">Added</text>      <rect class="executor-removed-legend" x="5px" y="30px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="42px">Removed</text>    </svg></div>',
+  },
+  {
+    'id': 'jobs',
+    'content': '<div>Jobs</div><div class="legend-area"><svg width="150px" height="85px">      <rect class="succeeded-job-legend" x="5px" y="5px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="17px">Succeeded</text>      <rect class="failed-job-legend" x="5px" y="30px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="42px">Failed</text>      <rect class="running-job-legend" x="5px" y="55px" width="20px" height="15px" rx="2px" ry="2px"></rect>      <text x="35px" y="67px">Running</text>    </svg></div>',
+  }
+]
+        ,[
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517853071),
+  'end': new Date(1792517854009),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="first at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:27 (Job 0)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:33' +
+     '<br>Completed: 2026/10/20 17:37:34">' +
+    'first at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:27 (Job 0)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517854236),
+  'end': new Date(1792517854497),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="first at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:27 (Job 1)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:34' +
+     '<br>Completed: 2026/10/20 17:37:34">' +
+    'first at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:27 (Job 1)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517854796),
+  'end': new Date(1792517856995),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:28 (Job 2)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:34' +
+     '<br>Completed: 2026/10/20 17:37:36">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:28 (Job 2)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517857221),
+  'end': new Date(1792517857866),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:32 (Job 3)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:37' +
+     '<br>Completed: 2026/10/20 17:37:37">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:32 (Job 3)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517858004),
+  'end': new Date(1792517864734),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:35 (Job 4)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:38' +
+     '<br>Completed: 2026/10/20 17:37:44">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:35 (Job 4)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517864799),
+  'end': new Date(1792517868560),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 5)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:44' +
+     '<br>Completed: 2026/10/20 17:37:48">' +
+    'count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 5)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517868595),
+  'end': new Date(1792517870914),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="runJob at PythonRDD.scala:218 (Job 6)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:48' +
+     '<br>Completed: 2026/10/20 17:37:50">' +
+    'runJob at PythonRDD.scala:218 (Job 6)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517870975),
+  'end': new Date(1792517874256),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 7)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:50' +
+     '<br>Completed: 2026/10/20 17:37:54">' +
+    'count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 7)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517874305),
+  'end': new Date(1792517877834),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 8)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:54' +
+     '<br>Completed: 2026/10/20 17:37:57">' +
+    'count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 8)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517877898),
+  'end': new Date(1792517881939),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 9)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:37:57' +
+     '<br>Completed: 2026/10/20 17:38:01">' +
+    'count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 9)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517881985),
+  'end': new Date(1792517885417),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 10)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:01' +
+     '<br>Completed: 2026/10/20 17:38:05">' +
+    'count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 10)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517885467),
+  'end': new Date(1792517889008),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 11)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:05' +
+     '<br>Completed: 2026/10/20 17:38:09">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:36 (Job 11)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517890511),
+  'end': new Date(1792517894116),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 12)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:10' +
+     '<br>Completed: 2026/10/20 17:38:14">' +
+    '$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 12)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517894431),
+  'end': new Date(1792517894610),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 13)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:14' +
+     '<br>Completed: 2026/10/20 17:38:14">' +
+    '$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 13)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517894900),
+  'end': new Date(1792517895003),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:42 (Job 14)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:14' +
+     '<br>Completed: 2026/10/20 17:38:15">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:42 (Job 14)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517895106),
+  'end': new Date(1792517895199),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:42 (Job 15)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:15' +
+     '<br>Completed: 2026/10/20 17:38:15">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:42 (Job 15)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517895219),
+  'end': new Date(1792517895475),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:42 (Job 16)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:15' +
+     '<br>Completed: 2026/10/20 17:38:15">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:42 (Job 16)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517895580),
+  'end': new Date(1792517895771),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:42 (Job 17)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:15' +
+     '<br>Completed: 2026/10/20 17:38:15">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:42 (Job 17)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517896406),
+  'end': new Date(1792517896504),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:45 (Job 18)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:16' +
+     '<br>Completed: 2026/10/20 17:38:16">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:45 (Job 18)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517896606),
+  'end': new Date(1792517896663),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:45 (Job 19)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:16' +
+     '<br>Completed: 2026/10/20 17:38:16">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:45 (Job 19)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517896882),
+  'end': new Date(1792517896982),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 20)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:16' +
+     '<br>Completed: 2026/10/20 17:38:16">' +
+    '$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 20)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517897088),
+  'end': new Date(1792517897134),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 21)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:17' +
+     '<br>Completed: 2026/10/20 17:38:17">' +
+    '$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 21)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517897892),
+  'end': new Date(1792517920519),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:53 (Job 22)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:17' +
+     '<br>Completed: 2026/10/20 17:38:40">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:53 (Job 22)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517920582),
+  'end': new Date(1792517927077),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:54 (Job 23)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:40' +
+     '<br>Completed: 2026/10/20 17:38:47">' +
+    'count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:54 (Job 23)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517927130),
+  'end': new Date(1792517934400),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:54 (Job 24)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:47' +
+     '<br>Completed: 2026/10/20 17:38:54">' +
+    'count at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:54 (Job 24)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517934465),
+  'end': new Date(1792517940992),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="sortBy at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:56 (Job 25)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:38:54' +
+     '<br>Completed: 2026/10/20 17:39:00">' +
+    'sortBy at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:56 (Job 25)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517941007),
+  'end': new Date(1792517946597),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="sortBy at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:56 (Job 26)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:01' +
+     '<br>Completed: 2026/10/20 17:39:06">' +
+    'sortBy at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:56 (Job 26)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517946903),
+  'end': new Date(1792517958959),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="runJob at SparkHadoopWriter.scala:85 (Job 27)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:06' +
+     '<br>Completed: 2026/10/20 17:39:18">' +
+    'runJob at SparkHadoopWriter.scala:85 (Job 27)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517959211),
+  'end': new Date(1792517960922),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 28)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:19' +
+     '<br>Completed: 2026/10/20 17:39:20">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 28)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517960960),
+  'end': new Date(1792517961487),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 29)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:20' +
+     '<br>Completed: 2026/10/20 17:39:21">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 29)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517961511),
+  'end': new Date(1792517961631),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 30)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:21' +
+     '<br>Completed: 2026/10/20 17:39:21">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 30)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517961644),
+  'end': new Date(1792517961896),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 31)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:21' +
+     '<br>Completed: 2026/10/20 17:39:21">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 31)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517961911),
+  'end': new Date(1792517962231),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 32)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:21' +
+     '<br>Completed: 2026/10/20 17:39:22">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 32)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517962266),
+  'end': new Date(1792517962410),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 33)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:22' +
+     '<br>Completed: 2026/10/20 17:39:22">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:59 (Job 33)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517962838),
+  'end': new Date(1792517962855),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:61 (Job 34)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:22' +
+     '<br>Completed: 2026/10/20 17:39:22">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:61 (Job 34)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517963328),
+  'end': new Date(1792517964559),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 35)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:23' +
+     '<br>Completed: 2026/10/20 17:39:24">' +
+    '$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768 (Job 35)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517964789),
+  'end': new Date(1792517974999),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:68 (Job 36)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:24' +
+     '<br>Completed: 2026/10/20 17:39:34">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:68 (Job 36)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517975108),
+  'end': new Date(1792517975458),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:69 (Job 37)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:35' +
+     '<br>Completed: 2026/10/20 17:39:35">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:69 (Job 37)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517975478),
+  'end': new Date(1792517975561),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:69 (Job 38)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:35' +
+     '<br>Completed: 2026/10/20 17:39:35">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:69 (Job 38)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517975891),
+  'end': new Date(1792517976785),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:76 (Job 39)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:35' +
+     '<br>Completed: 2026/10/20 17:39:36">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:76 (Job 39)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517976810),
+  'end': new Date(1792517976868),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:76 (Job 40)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:36' +
+     '<br>Completed: 2026/10/20 17:39:36">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:76 (Job 40)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517976870),
+  'end': new Date(1792517976939),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:76 (Job 41)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:36' +
+     '<br>Completed: 2026/10/20 17:39:36">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:76 (Job 41)</div>'
+}
+         ,
+{
+  'className': 'job application-timeline-object succeeded',
+  'group': 'jobs',
+  'start': new Date(1792517976954),
+  'end': new Date(1792517977000),
+  'content': '<div class="application-timeline-content"' +
+     'data-bs-html="true" data-bs-toggle="tooltip"' +
+     'data-bs-title="collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:76 (Job 42)<br>' +
+     'Status: SUCCEEDED<br>' +
+     'Submitted: 2026/10/20 17:39:36' +
+     '<br>Completed: 2026/10/20 17:39:37">' +
+    'collect at C:\\Users\\lenovo\\Documents\\Codex\\2026-10-20\\fa-2\\outputs\\TP1_Spark\\suite_wordcount\\scripts\\analyse_complete.py:76 (Job 42)</div>'
+}
+         ,
+{
+  'className': 'executor added',
+  'group': 'executors',
+  'start': new Date(1792517842343),
+  'content': '<div class="executor-event-content"' +
+    'data-bs-toggle="tooltip"' +
+    'data-bs-title="Executor driver<br>' +
+    'Added at 2026/10/20 17:37:22"' +
+    'data-bs-html="true">Executor driver added</div>'
+}
+         ], 1792517839755, 0);
+    </script><span id="completed" class="collapse-table" data-bs-toggle="collapse" data-bs-target="#aggregated-completedJobs" aria-expanded="true" aria-controls="aggregated-completedJobs" data-collapse-name="collapse-aggregated-completedJobs">
+          <h4>
+            <span class="collapse-table-arrow arrow-open"></span>
+            <a>Completed Jobs (43)</a>
+          </h4>
+        </span><div class="collapsible-table collapse show" id="aggregated-completedJobs">
+          <div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="d-flex align-items-center">
+        <span class="pe-1">Page: </span>
+        <ul class="pagination mb-0">
+          
+          
+          <li class="page-item disabled"><a href="#" class="page-link">1</a></li>
+          
+          
+        </ul>
+      </div>
+      <div>
+        <form id="form-completedJob-table-top-page" method="get" action="/jobs/?&amp;completedJob.sort=Job+Id&amp;completedJob.desc=true#completed" class="d-flex align-items-center gap-1 mb-0">
+          <input type="hidden" name="completedJob.sort" value="Job Id" style=""><input type="hidden" name="completedJob.desc" value="true" style="">
+          <label class="text-nowrap">1 Pages. Jump to</label>
+          <input type="text" name="completedJob.page" id="form-completedJob-table-top-page-no" value="1" class="form-control form-control-sm" style="width: 60px;">
+
+          <label class="text-nowrap">. Show </label>
+          <input type="text" id="form-completedJob-table-top-page-size" name="completedJob.pageSize" value="100" class="form-control form-control-sm" style="width: 60px;">
+          <label class="text-nowrap">items in a page.</label>
+
+          <button type="submit" class="btn btn-outline-secondary btn-sm">Go</button>
+        </form>
+      </div>
+    </div>
+        <table class="table table-bordered table-sm table-striped table-head-clickable table-cell-width-limited" id="completedJob-table">
+          <thead>
+      <tr><th>
+            <a href="/jobs/?&amp;completedJob.sort=Job+Id&amp;completedJob.desc=false&amp;completedJob.pageSize=100#completed">
+              <span data-bs-toggle="tooltip" title="">
+      Job Id&nbsp;▾
+    </span>
+            </a>
+          </th><th>
+              <a href="/jobs/?&amp;completedJob.sort=Description&amp;completedJob.pageSize=100#completed">
+                <span data-bs-toggle="tooltip" title="">
+      Description
+    </span>
+              </a>
+            </th><th>
+              <a href="/jobs/?&amp;completedJob.sort=Submitted&amp;completedJob.pageSize=100#completed">
+                <span data-bs-toggle="tooltip" title="">
+      Submitted
+    </span>
+              </a>
+            </th><th>
+              <a href="/jobs/?&amp;completedJob.sort=Duration&amp;completedJob.pageSize=100#completed">
+                <span data-bs-toggle="tooltip" title="Elapsed time since the job was submitted until execution completion of all its stages.">
+      Duration
+    </span>
+              </a>
+            </th><th>
+              <span data-bs-toggle="tooltip" title="">
+      Stages: Succeeded/Total
+    </span>
+            </th><th>
+              <span data-bs-toggle="tooltip" title="">
+      Tasks (for all stages): Succeeded/Total
+    </span>
+            </th></tr>
+    </thead>
+          <tbody>
+            <tr id="job-42">
+      <td>
+        42 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76</span> 
+        <a href="/jobs/job/?id=42" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76</a>
+      </td>
+      <td>
+        2026/10/20 17:39:36
+      </td>
+      <td>46 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (2 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (3 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (3 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-41">
+      <td>
+        41 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76</span> 
+        <a href="/jobs/job/?id=41" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76</a>
+      </td>
+      <td>
+        2026/10/20 17:39:36
+      </td>
+      <td>69 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (2 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (2 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-40">
+      <td>
+        40 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76</span> 
+        <a href="/jobs/job/?id=40" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76</a>
+      </td>
+      <td>
+        2026/10/20 17:39:36
+      </td>
+      <td>58 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (2 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (2 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-39">
+      <td>
+        39 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76</span> 
+        <a href="/jobs/job/?id=39" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:76</a>
+      </td>
+      <td>
+        2026/10/20 17:39:35
+      </td>
+      <td>0,9 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-38">
+      <td>
+        38 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:69</span> 
+        <a href="/jobs/job/?id=38" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:69</a>
+      </td>
+      <td>
+        2026/10/20 17:39:35
+      </td>
+      <td>83 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (2 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (2 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-37">
+      <td>
+        37 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:69</span> 
+        <a href="/jobs/job/?id=37" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:69</a>
+      </td>
+      <td>
+        2026/10/20 17:39:35
+      </td>
+      <td>0,4 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-36">
+      <td>
+        36 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:68</span> 
+        <a href="/jobs/job/?id=36" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:68</a>
+      </td>
+      <td>
+        2026/10/20 17:39:24
+      </td>
+      <td>10 s</td>
+      <td class="stage-progress-cell">
+        2/2
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="10/10">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        10/10
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-35">
+      <td>
+        35 
+      </td>
+      <td>
+        <span class="description-input">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</span> 
+        <a href="/jobs/job/?id=35" class="name-link">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</a>
+      </td>
+      <td>
+        2026/10/20 17:39:23
+      </td>
+      <td>1 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (2 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="8/8 (3 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        8/8 (3 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-34">
+      <td>
+        34 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:61</span> 
+        <a href="/jobs/job/?id=34" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:61</a>
+      </td>
+      <td>
+        2026/10/20 17:39:22
+      </td>
+      <td>17 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (2 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (3 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (3 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-33">
+      <td>
+        33 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</span> 
+        <a href="/jobs/job/?id=33" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</a>
+      </td>
+      <td>
+        2026/10/20 17:39:22
+      </td>
+      <td>0,1 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (2 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="8/8 (3 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        8/8 (3 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-32">
+      <td>
+        32 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</span> 
+        <a href="/jobs/job/?id=32" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</a>
+      </td>
+      <td>
+        2026/10/20 17:39:21
+      </td>
+      <td>0,3 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (2 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="8/8 (3 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        8/8 (3 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-31">
+      <td>
+        31 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</span> 
+        <a href="/jobs/job/?id=31" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</a>
+      </td>
+      <td>
+        2026/10/20 17:39:21
+      </td>
+      <td>0,3 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (2 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (2 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-30">
+      <td>
+        30 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</span> 
+        <a href="/jobs/job/?id=30" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</a>
+      </td>
+      <td>
+        2026/10/20 17:39:21
+      </td>
+      <td>0,1 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (2 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (2 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-29">
+      <td>
+        29 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</span> 
+        <a href="/jobs/job/?id=29" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</a>
+      </td>
+      <td>
+        2026/10/20 17:39:20
+      </td>
+      <td>0,5 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-28">
+      <td>
+        28 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</span> 
+        <a href="/jobs/job/?id=28" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:59</a>
+      </td>
+      <td>
+        2026/10/20 17:39:19
+      </td>
+      <td>2 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-27">
+      <td>
+        27 
+      </td>
+      <td>
+        <span class="description-input">runJob at SparkHadoopWriter.scala:85</span> 
+        <a href="/jobs/job/?id=27" class="name-link">runJob at SparkHadoopWriter.scala:85</a>
+      </td>
+      <td>
+        2026/10/20 17:39:06
+      </td>
+      <td>12 s</td>
+      <td class="stage-progress-cell">
+        2/2
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="10/10 (5 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        10/10 (5 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-26">
+      <td>
+        26 
+      </td>
+      <td>
+        <span class="description-input">sortBy at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:56</span> 
+        <a href="/jobs/job/?id=26" class="name-link">sortBy at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:56</a>
+      </td>
+      <td>
+        2026/10/20 17:39:01
+      </td>
+      <td>6 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="5/5 (5 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        5/5 (5 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-25">
+      <td>
+        25 
+      </td>
+      <td>
+        <span class="description-input">sortBy at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:56</span> 
+        <a href="/jobs/job/?id=25" class="name-link">sortBy at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:56</a>
+      </td>
+      <td>
+        2026/10/20 17:38:54
+      </td>
+      <td>7 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="5/5 (5 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        5/5 (5 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-24">
+      <td>
+        24 
+      </td>
+      <td>
+        <span class="description-input">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:54</span> 
+        <a href="/jobs/job/?id=24" class="name-link">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:54</a>
+      </td>
+      <td>
+        2026/10/20 17:38:47
+      </td>
+      <td>7 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="5/5">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        5/5
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-23">
+      <td>
+        23 
+      </td>
+      <td>
+        <span class="description-input">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:54</span> 
+        <a href="/jobs/job/?id=23" class="name-link">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:54</a>
+      </td>
+      <td>
+        2026/10/20 17:38:40
+      </td>
+      <td>6 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="5/5">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        5/5
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-22">
+      <td>
+        22 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:53</span> 
+        <a href="/jobs/job/?id=22" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:53</a>
+      </td>
+      <td>
+        2026/10/20 17:38:17
+      </td>
+      <td>23 s</td>
+      <td class="stage-progress-cell">
+        2/2
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="10/10">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        10/10
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-21">
+      <td>
+        21 
+      </td>
+      <td>
+        <span class="description-input">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</span> 
+        <a href="/jobs/job/?id=21" class="name-link">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</a>
+      </td>
+      <td>
+        2026/10/20 17:38:17
+      </td>
+      <td>46 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (1 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (1 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-20">
+      <td>
+        20 
+      </td>
+      <td>
+        <span class="description-input">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</span> 
+        <a href="/jobs/job/?id=20" class="name-link">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</a>
+      </td>
+      <td>
+        2026/10/20 17:38:16
+      </td>
+      <td>0,1 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-19">
+      <td>
+        19 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:45</span> 
+        <a href="/jobs/job/?id=19" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:45</a>
+      </td>
+      <td>
+        2026/10/20 17:38:16
+      </td>
+      <td>57 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (1 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (1 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-18">
+      <td>
+        18 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:45</span> 
+        <a href="/jobs/job/?id=18" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:45</a>
+      </td>
+      <td>
+        2026/10/20 17:38:16
+      </td>
+      <td>98 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-17">
+      <td>
+        17 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42</span> 
+        <a href="/jobs/job/?id=17" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42</a>
+      </td>
+      <td>
+        2026/10/20 17:38:15
+      </td>
+      <td>0,2 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (2 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (2 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (2 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-16">
+      <td>
+        16 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42</span> 
+        <a href="/jobs/job/?id=16" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42</a>
+      </td>
+      <td>
+        2026/10/20 17:38:15
+      </td>
+      <td>0,3 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (1 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (1 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-15">
+      <td>
+        15 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42</span> 
+        <a href="/jobs/job/?id=15" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42</a>
+      </td>
+      <td>
+        2026/10/20 17:38:15
+      </td>
+      <td>93 ms</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (1 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (1 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-14">
+      <td>
+        14 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42</span> 
+        <a href="/jobs/job/?id=14" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:42</a>
+      </td>
+      <td>
+        2026/10/20 17:38:14
+      </td>
+      <td>0,1 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-13">
+      <td>
+        13 
+      </td>
+      <td>
+        <span class="description-input">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</span> 
+        <a href="/jobs/job/?id=13" class="name-link">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</a>
+      </td>
+      <td>
+        2026/10/20 17:38:14
+      </td>
+      <td>0,2 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (1 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (1 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-12">
+      <td>
+        12 
+      </td>
+      <td>
+        <span class="description-input">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</span> 
+        <a href="/jobs/job/?id=12" class="name-link">$anonfun$withThreadLocalCaptured$1 at CompletableFuture.java:1768</a>
+      </td>
+      <td>
+        2026/10/20 17:38:10
+      </td>
+      <td>4 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-11">
+      <td>
+        11 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</span> 
+        <a href="/jobs/job/?id=11" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</a>
+      </td>
+      <td>
+        2026/10/20 17:38:05
+      </td>
+      <td>4 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-10">
+      <td>
+        10 
+      </td>
+      <td>
+        <span class="description-input">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</span> 
+        <a href="/jobs/job/?id=10" class="name-link">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</a>
+      </td>
+      <td>
+        2026/10/20 17:38:01
+      </td>
+      <td>3 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-9">
+      <td>
+        9 
+      </td>
+      <td>
+        <span class="description-input">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</span> 
+        <a href="/jobs/job/?id=9" class="name-link">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</a>
+      </td>
+      <td>
+        2026/10/20 17:37:57
+      </td>
+      <td>4 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-8">
+      <td>
+        8 
+      </td>
+      <td>
+        <span class="description-input">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</span> 
+        <a href="/jobs/job/?id=8" class="name-link">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</a>
+      </td>
+      <td>
+        2026/10/20 17:37:54
+      </td>
+      <td>4 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-7">
+      <td>
+        7 
+      </td>
+      <td>
+        <span class="description-input">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</span> 
+        <a href="/jobs/job/?id=7" class="name-link">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</a>
+      </td>
+      <td>
+        2026/10/20 17:37:50
+      </td>
+      <td>3 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-6">
+      <td>
+        6 
+      </td>
+      <td>
+        <span class="description-input">runJob at PythonRDD.scala:218</span> 
+        <a href="/jobs/job/?id=6" class="name-link">runJob at PythonRDD.scala:218</a>
+      </td>
+      <td>
+        2026/10/20 17:37:48
+      </td>
+      <td>2 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-5">
+      <td>
+        5 
+      </td>
+      <td>
+        <span class="description-input">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</span> 
+        <a href="/jobs/job/?id=5" class="name-link">count at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:36</a>
+      </td>
+      <td>
+        2026/10/20 17:37:44
+      </td>
+      <td>4 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-4">
+      <td>
+        4 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:35</span> 
+        <a href="/jobs/job/?id=4" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:35</a>
+      </td>
+      <td>
+        2026/10/20 17:37:38
+      </td>
+      <td>7 s</td>
+      <td class="stage-progress-cell">
+        2/2
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="4/4">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        4/4
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-3">
+      <td>
+        3 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:32</span> 
+        <a href="/jobs/job/?id=3" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:32</a>
+      </td>
+      <td>
+        2026/10/20 17:37:37
+      </td>
+      <td>0,6 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-2">
+      <td>
+        2 
+      </td>
+      <td>
+        <span class="description-input">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:28</span> 
+        <a href="/jobs/job/?id=2" class="name-link">collect at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:28</a>
+      </td>
+      <td>
+        2026/10/20 17:37:34
+      </td>
+      <td>2 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-1">
+      <td>
+        1 
+      </td>
+      <td>
+        <span class="description-input">first at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:27</span> 
+        <a href="/jobs/job/?id=1" class="name-link">first at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:27</a>
+      </td>
+      <td>
+        2026/10/20 17:37:34
+      </td>
+      <td>0,3 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        (1 skipped)
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="1/1 (2 skipped)">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        1/1 (2 skipped)
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr><tr id="job-0">
+      <td>
+        0 
+      </td>
+      <td>
+        <span class="description-input">first at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:27</span> 
+        <a href="/jobs/job/?id=0" class="name-link">first at C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\outputs\TP1_Spark\suite_wordcount\scripts\analyse_complete.py:27</a>
+      </td>
+      <td>
+        2026/10/20 17:37:33
+      </td>
+      <td>0,9 s</td>
+      <td class="stage-progress-cell">
+        1/1
+        
+        
+      </td>
+      <td class="progress-cell">
+        <div class="progress-stacked" title="2/2">
+      <span class="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+        2/2
+      </span>
+      <div class="progress" role="progressbar" aria-label="Completed" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100.0%">
+        <div class="progress-bar progress-completed"></div>
+      </div>
+      <div class="progress" role="progressbar" aria-label="Running" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0.0%">
+        <div class="progress-bar progress-started"></div>
+      </div>
+    </div>
+      </td>
+    </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="d-flex align-items-center">
+        <span class="pe-1">Page: </span>
+        <ul class="pagination mb-0">
+          
+          
+          <li class="page-item disabled"><a href="#" class="page-link">1</a></li>
+          
+          
+        </ul>
+      </div>
+      <div>
+        <form id="form-completedJob-table-bottom-page" method="get" action="/jobs/?&amp;completedJob.sort=Job+Id&amp;completedJob.desc=true#completed" class="d-flex align-items-center gap-1 mb-0">
+          <input type="hidden" name="completedJob.sort" value="Job Id" style=""><input type="hidden" name="completedJob.desc" value="true" style="">
+          <label class="text-nowrap">1 Pages. Jump to</label>
+          <input type="text" name="completedJob.page" id="form-completedJob-table-bottom-page-no" value="1" class="form-control form-control-sm" style="width: 60px;">
+
+          <label class="text-nowrap">. Show </label>
+          <input type="text" id="form-completedJob-table-bottom-page-size" name="completedJob.pageSize" value="100" class="form-control form-control-sm" style="width: 60px;">
+          <label class="text-nowrap">items in a page.</label>
+
+          <button type="submit" class="btn btn-outline-secondary btn-sm">Go</button>
+        </form>
+      </div>
+    </div>
+      </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer mt-auto py-2 bg-body-tertiary border-top">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center small text-body-secondary">
+          <span>4.2.0</span>
+          <span>Started: 2026/10/20 17:37:19</span><span id="footer-uptime" data-start-time="1792517839755">Uptime: 0h 2m</span>
+          <span>lenovo</span>
+        </div>
+      </div>
+    </footer>
+      
+    <div class="scroll-btn-container"><div class="scroll-btn-half scroll-btn-top"></div><div class="scroll-btn-half scroll-btn-bottom"></div></div></body></html>

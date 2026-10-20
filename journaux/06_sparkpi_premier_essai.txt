@@ -1,0 +1,290 @@
+$ cmd /c C:\Users\lenovo\Documents\Codex\2026-10-20\fa-2\work\spark\bin\run-example.cmd SparkPi 10
+
+WARNING: Using incubator modules: jdk.incubator.vector
+26/10/20 17:25:46 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+26/10/20 17:25:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/10/20 17:25:48 INFO SparkContext: Running Spark version 4.2.0
+26/10/20 17:25:48 INFO SparkContext: OS info Windows 11, 10.0, amd64
+26/10/20 17:25:48 INFO SparkContext: Java version 17.0.20.1+1
+26/10/20 17:25:48 INFO ResourceUtils: ==============================================================
+26/10/20 17:25:48 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/20 17:25:48 INFO ResourceUtils: ==============================================================
+26/10/20 17:25:48 INFO SparkContext: Submitted application: Spark Pi
+26/10/20 17:25:48 INFO SecurityManager: Changing view acls to: lenovo
+26/10/20 17:25:48 INFO SecurityManager: Changing modify acls to: lenovo
+26/10/20 17:25:48 INFO SecurityManager: Changing view acls groups to: lenovo
+26/10/20 17:25:48 INFO SecurityManager: Changing modify acls groups to: lenovo
+26/10/20 17:25:48 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: lenovo groups with view permissions: EMPTY; users with modify permissions: lenovo; groups with modify permissions: EMPTY; RPC SSL disabled
+26/10/20 17:25:48 INFO Utils: Successfully started service 'sparkDriver' on port 55748.
+26/10/20 17:25:48 INFO SparkEnv: Registering MapOutputTracker
+26/10/20 17:25:48 INFO SparkEnv: Registering BlockManagerMaster
+26/10/20 17:25:48 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/20 17:25:48 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/20 17:25:48 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/20 17:25:48 INFO DiskBlockManager: Created local directory at C:\Users\lenovo\AppData\Local\Temp\blockmgr-a761ad74-2a42-480d-86bf-17b66d4bb779
+26/10/20 17:25:49 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/20 17:25:49 INFO JettyUtils: Start Jetty 127.0.0.1:4040 for SparkUI
+26/10/20 17:25:49 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/20 17:25:49 INFO SparkContext: Added JAR file:///C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/work/spark/examples/jars/scopt_2.13-3.7.1.jar at spark://kubernetes.docker.internal:55748/jars/scopt_2.13-3.7.1.jar with timestamp 1792517148175
+26/10/20 17:25:49 INFO SparkContext: Added JAR file:///C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/work/spark/examples/jars/spark-examples_2.13-4.2.0.jar at spark://kubernetes.docker.internal:55748/jars/spark-examples_2.13-4.2.0.jar with timestamp 1792517148175
+26/10/20 17:25:49 WARN SparkContext: The JAR file:/C:/Users/lenovo/Documents/Codex/2026-10-20/fa-2/work/spark/examples/jars/spark-examples_2.13-4.2.0.jar at spark://kubernetes.docker.internal:55748/jars/spark-examples_2.13-4.2.0.jar has been added already. Overwriting of added jar is not supported in the current version.
+26/10/20 17:25:49 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/20 17:25:49 INFO ResourceProfile: Limiting resource is cpu
+26/10/20 17:25:49 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/20 17:25:49 INFO SecurityManager: Changing view acls to: lenovo
+26/10/20 17:25:49 INFO SecurityManager: Changing modify acls to: lenovo
+26/10/20 17:25:49 INFO SecurityManager: Changing view acls groups to: lenovo
+26/10/20 17:25:49 INFO SecurityManager: Changing modify acls groups to: lenovo
+26/10/20 17:25:49 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: lenovo groups with view permissions: EMPTY; users with modify permissions: lenovo; groups with modify permissions: EMPTY; RPC SSL disabled
+26/10/20 17:25:50 INFO Executor: Starting executor ID driver on host kubernetes.docker.internal
+26/10/20 17:25:50 INFO Executor: Running Spark version 4.2.0
+26/10/20 17:25:50 INFO Executor: OS info Windows 11, 10.0, amd64
+26/10/20 17:25:50 INFO Executor: Java version 17.0.20.1+1
+26/10/20 17:25:50 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/20 17:25:50 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@11574592 for default.
+26/10/20 17:25:50 INFO Executor: Fetching spark://kubernetes.docker.internal:55748/jars/spark-examples_2.13-4.2.0.jar with timestamp 1792517148175
+26/10/20 17:25:50 INFO TransportClientFactory: Successfully created connection to kubernetes.docker.internal/127.0.0.1:55748 after 43 ms (0 ms spent in bootstraps)
+26/10/20 17:25:50 INFO Utils: Fetching spark://kubernetes.docker.internal:55748/jars/spark-examples_2.13-4.2.0.jar to C:\Users\lenovo\AppData\Local\Temp\spark-d50c7714-165b-4070-b819-420639897214\userFiles-9e61e529-c38f-4d45-90e2-a86fe68299f3\fetchFileTemp14126534501697411880.tmp
+26/10/20 17:25:50 ERROR SparkContext: Error initializing SparkContext.
+java.lang.RuntimeException: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:790)
+	at org.apache.hadoop.util.Shell.getSetPermissionCommand(Shell.java:299)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1305)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1291)
+	at org.apache.spark.util.Utils$.fetchFile(Utils.scala:432)
+	at org.apache.spark.executor.Executor.$anonfun$updateDependencies$14(Executor.scala:1489)
+	at org.apache.spark.executor.Executor.$anonfun$updateDependencies$14$adapted(Executor.scala:1480)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:936)
+	at scala.collection.IterableOps$WithFilter.foreach(Iterable.scala:906)
+	at org.apache.spark.executor.Executor.updateDependencies(Executor.scala:1480)
+	at org.apache.spark.executor.Executor.<init>(Executor.scala:520)
+	at org.apache.spark.scheduler.local.LocalEndpoint.<init>(LocalSchedulerBackend.scala:68)
+	at org.apache.spark.scheduler.local.LocalSchedulerBackend.start(LocalSchedulerBackend.scala:150)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:229)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:629)
+	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:3075)
+	at org.apache.spark.sql.classic.SparkSession$Builder.$anonfun$build$2(SparkSession.scala:1045)
+	at scala.Option.getOrElse(Option.scala:201)
+	at org.apache.spark.sql.classic.SparkSession$Builder.build(SparkSession.scala:1036)
+	at org.apache.spark.sql.classic.SparkSession$Builder.getOrCreate(SparkSession.scala:1065)
+	at org.apache.spark.sql.classic.SparkSession$Builder.getOrCreate(SparkSession.scala:938)
+	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:929)
+	at org.apache.spark.examples.SparkPi$.main(SparkPi.scala:30)
+	at org.apache.spark.examples.SparkPi.main(SparkPi.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:1033)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:203)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:226)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:95)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1171)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1180)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:602)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:623)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:646)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:743)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.conf.Configuration.getTimeDurationHelper(Configuration.java:1938)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1896)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1869)
+	at org.apache.hadoop.util.ShutdownHookManager.getShutdownTimeout(ShutdownHookManager.java:184)
+	at org.apache.hadoop.util.ShutdownHookManager$HookEntry.<init>(ShutdownHookManager.java:208)
+	at org.apache.hadoop.util.ShutdownHookManager.addShutdownHook(ShutdownHookManager.java:305)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$install$1(ShutdownHookManager.scala:194)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.Option.fold(Option.scala:263)
+	at org.apache.spark.util.SparkShutdownHookManager.install(ShutdownHookManager.scala:195)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks$lzycompute(ShutdownHookManager.scala:55)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks(ShutdownHookManager.scala:53)
+	at org.apache.spark.util.ShutdownHookManager$.addShutdownHook(ShutdownHookManager.scala:159)
+	at org.apache.spark.util.ShutdownHookManager$.<clinit>(ShutdownHookManager.scala:63)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:249)
+	at org.apache.spark.util.SparkFileUtils.createTempDir(SparkFileUtils.scala:125)
+	at org.apache.spark.util.SparkFileUtils.createTempDir$(SparkFileUtils.scala:124)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:97)
+	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:381)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:965)
+	... 6 more
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:522)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:493)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:570)
+	... 27 more
+26/10/20 17:25:50 INFO SparkContext: SparkContext is stopping with exitCode 0 from getOrCreate at SparkPi.scala:30.
+26/10/20 17:25:50 INFO SparkUI: Stopped Spark web UI at http://kubernetes.docker.internal:4040
+26/10/20 17:25:50 ERROR Utils: Uncaught exception in thread main
+java.lang.NullPointerException: Cannot invoke "org.apache.spark.rpc.RpcEndpointRef.ask(Object, scala.reflect.ClassTag)" because the return value of "org.apache.spark.scheduler.local.LocalSchedulerBackend.localEndpoint()" is null
+	at org.apache.spark.scheduler.local.LocalSchedulerBackend.org$apache$spark$scheduler$local$LocalSchedulerBackend$$stop(LocalSchedulerBackend.scala:196)
+	at org.apache.spark.scheduler.local.LocalSchedulerBackend.stop(LocalSchedulerBackend.scala:167)
+	at org.apache.spark.scheduler.SchedulerBackend.stop(SchedulerBackend.scala:34)
+	at org.apache.spark.scheduler.SchedulerBackend.stop$(SchedulerBackend.scala:34)
+	at org.apache.spark.scheduler.local.LocalSchedulerBackend.stop(LocalSchedulerBackend.scala:113)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.$anonfun$stop$2(TaskSchedulerImpl.scala:957)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1314)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.stop(TaskSchedulerImpl.scala:957)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$stop$4(DAGScheduler.scala:3499)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1314)
+	at org.apache.spark.scheduler.DAGScheduler.stop(DAGScheduler.scala:3499)
+	at org.apache.spark.SparkContext.$anonfun$stop$12(SparkContext.scala:2357)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1314)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2357)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2308)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:740)
+	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:3075)
+	at org.apache.spark.sql.classic.SparkSession$Builder.$anonfun$build$2(SparkSession.scala:1045)
+	at scala.Option.getOrElse(Option.scala:201)
+	at org.apache.spark.sql.classic.SparkSession$Builder.build(SparkSession.scala:1036)
+	at org.apache.spark.sql.classic.SparkSession$Builder.getOrCreate(SparkSession.scala:1065)
+	at org.apache.spark.sql.classic.SparkSession$Builder.getOrCreate(SparkSession.scala:938)
+	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:929)
+	at org.apache.spark.examples.SparkPi$.main(SparkPi.scala:30)
+	at org.apache.spark.examples.SparkPi.main(SparkPi.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:1033)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:203)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:226)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:95)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1171)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1180)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+26/10/20 17:25:50 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/10/20 17:25:50 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/20 17:25:50 INFO MemoryStore: MemoryStore cleared
+26/10/20 17:25:50 INFO BlockManager: BlockManager stopped
+26/10/20 17:25:50 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/10/20 17:25:50 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+26/10/20 17:25:50 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/10/20 17:25:50 INFO SparkContext: Successfully stopped SparkContext (Uptime: 2485 ms)
+Exception in thread "main" java.lang.RuntimeException: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:790)
+	at org.apache.hadoop.util.Shell.getSetPermissionCommand(Shell.java:299)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1305)
+	at org.apache.hadoop.fs.FileUtil.chmod(FileUtil.java:1291)
+	at org.apache.spark.util.Utils$.fetchFile(Utils.scala:432)
+	at org.apache.spark.executor.Executor.$anonfun$updateDependencies$14(Executor.scala:1489)
+	at org.apache.spark.executor.Executor.$anonfun$updateDependencies$14$adapted(Executor.scala:1480)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:936)
+	at scala.collection.IterableOps$WithFilter.foreach(Iterable.scala:906)
+	at org.apache.spark.executor.Executor.updateDependencies(Executor.scala:1480)
+	at org.apache.spark.executor.Executor.<init>(Executor.scala:520)
+	at org.apache.spark.scheduler.local.LocalEndpoint.<init>(LocalSchedulerBackend.scala:68)
+	at org.apache.spark.scheduler.local.LocalSchedulerBackend.start(LocalSchedulerBackend.scala:150)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:229)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:629)
+	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:3075)
+	at org.apache.spark.sql.classic.SparkSession$Builder.$anonfun$build$2(SparkSession.scala:1045)
+	at scala.Option.getOrElse(Option.scala:201)
+	at org.apache.spark.sql.classic.SparkSession$Builder.build(SparkSession.scala:1036)
+	at org.apache.spark.sql.classic.SparkSession$Builder.getOrCreate(SparkSession.scala:1065)
+	at org.apache.spark.sql.classic.SparkSession$Builder.getOrCreate(SparkSession.scala:938)
+	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:929)
+	at org.apache.spark.examples.SparkPi$.main(SparkPi.scala:30)
+	at org.apache.spark.examples.SparkPi.main(SparkPi.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:1033)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:203)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:226)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:95)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1171)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1180)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:602)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:623)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:646)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:743)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.conf.Configuration.getTimeDurationHelper(Configuration.java:1938)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1896)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1869)
+	at org.apache.hadoop.util.ShutdownHookManager.getShutdownTimeout(ShutdownHookManager.java:184)
+	at org.apache.hadoop.util.ShutdownHookManager$HookEntry.<init>(ShutdownHookManager.java:208)
+	at org.apache.hadoop.util.ShutdownHookManager.addShutdownHook(ShutdownHookManager.java:305)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$install$1(ShutdownHookManager.scala:194)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.Option.fold(Option.scala:263)
+	at org.apache.spark.util.SparkShutdownHookManager.install(ShutdownHookManager.scala:195)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks$lzycompute(ShutdownHookManager.scala:55)
+	at org.apache.spark.util.ShutdownHookManager$.shutdownHooks(ShutdownHookManager.scala:53)
+	at org.apache.spark.util.ShutdownHookManager$.addShutdownHook(ShutdownHookManager.scala:159)
+	at org.apache.spark.util.ShutdownHookManager$.<clinit>(ShutdownHookManager.scala:63)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:249)
+	at org.apache.spark.util.SparkFileUtils.createTempDir(SparkFileUtils.scala:125)
+	at org.apache.spark.util.SparkFileUtils.createTempDir$(SparkFileUtils.scala:124)
+	at org.apache.spark.util.Utils$.createTempDir(Utils.scala:97)
+	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:381)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:965)
+	... 6 more
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:522)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:493)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:570)
+	... 27 more
+26/10/20 17:25:50 ERROR Utils: Uncaught exception in thread shutdown-hook-0
+java.lang.ExceptionInInitializerError
+	at org.apache.spark.executor.Executor.stop(Executor.scala:663)
+	at org.apache.spark.executor.Executor.$anonfun$stopHookReference$1(Executor.scala:269)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:231)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:205)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1963)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:205)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.Try$.apply(Try.scala:217)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:205)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:184)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.spark.SparkEnv.conf()" because the return value of "org.apache.spark.SparkEnv$.get()" is null
+	at org.apache.spark.shuffle.ShuffleBlockPusher$.<clinit>(ShuffleBlockPusher.scala:503)
+	... 16 more
+26/10/20 17:25:50 WARN ShutdownHookManager: ShutdownHook '' failed, java.util.concurrent.ExecutionException: java.lang.ExceptionInInitializerError
+java.util.concurrent.ExecutionException: java.lang.ExceptionInInitializerError
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at org.apache.hadoop.util.ShutdownHookManager.executeShutdown(ShutdownHookManager.java:125)
+	at org.apache.hadoop.util.ShutdownHookManager$1.work(ShutdownHookManager.java:96)
+	at org.apache.hadoop.util.concurrent.SubjectInheritingThread.run(SubjectInheritingThread.java:209)
+Caused by: java.lang.ExceptionInInitializerError
+	at org.apache.spark.executor.Executor.stop(Executor.scala:663)
+	at org.apache.spark.executor.Executor.$anonfun$stopHookReference$1(Executor.scala:269)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:231)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:205)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1963)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:205)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.util.Try$.apply(Try.scala:217)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:205)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:184)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.spark.SparkEnv.conf()" because the return value of "org.apache.spark.SparkEnv$.get()" is null
+	at org.apache.spark.shuffle.ShuffleBlockPusher$.<clinit>(ShuffleBlockPusher.scala:503)
+	... 16 more
+
+Code de sortie : 1
